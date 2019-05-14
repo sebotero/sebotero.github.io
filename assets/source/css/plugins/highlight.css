@@ -83,11 +83,11 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 }
 
 .hljs-deletion {
-  background: #fdd;
+  background: #f8f8f8;
 }
 
 .hljs-addition {
-  background: #dfd;
+  background: #f8f8f8;
 }
 
 .hljs-emphasis {
