@@ -624,6 +624,7 @@ img {
 
 figure {
     margin: 0;
+    display: inline-block;
 }
 
 svg:not(:root) {
