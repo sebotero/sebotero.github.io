@@ -15,6 +15,7 @@ body {
     margin: 0;
 }
 
+
 article,
 aside,
 details,
@@ -68,7 +69,7 @@ template {
 
 /* Links */
 a {
-    color: inherit;
+    color: #00548f;
     cursor: pointer;
     text-decoration: underline;
     background-color: transparent;
@@ -82,9 +83,12 @@ a {
     transition: all 0.2s ease-out;
 }
 
-a:hover {
-    text-decoration: none;
+a.ex1:hover {
+    color: #006CB8;
 }
+
+
+
 
 /*  Typography */
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
@@ -6626,7 +6630,7 @@ h1, h2, h3, h4, h5, h6 {
 .icon-list .crt-icon,
 .post-title a:hover,
 .crt-nav-type1 .crt-nav li.current a {
-    color: #c0e3e7;
+    color: #8C1515;
 }
 
 mark,
@@ -6644,7 +6648,7 @@ mark,
 #crt-main-nav .sub-menu li > a:hover,
 #crt-main-nav .sub-menu .current > a,
 #crt-main-nav-sm .sub-menu:before {
-    background-color: #c0e3e7;
+    background-color: #8C1515;
 }
 
 .btn-share,
@@ -6653,19 +6657,19 @@ mark,
 .progress-bullets .bullet,
 .education-date:after,
 .education-date:before {
-    border-color: #c0e3e7;
+    border-color: #8C1515;
 }
 
 ::-moz-selection {
-    background-color: #c0e3e7;
+    background-color: #8C1515;
 }
 
 ::selection {
-    background-color: #c0e3e7;
+    background-color: #8C1515;
 }
 
 #crt-bg-shape-2 polygon {
-    fill: #c0e3e7;
+    fill: #8C1515;
 }
 
 /* Color Darkest */
