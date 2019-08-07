@@ -1,0 +1,63 @@
+::selection {
+  background-color:#38f9d7;
+  color: #fff;
+}
+::-moz-selection {
+  background-color:#38f9d7;
+  color: #fff;
+}
+
+
+
+.theme-color {
+  color:#38f9d7;
+}
+
+
+.theme-after-bg:after,
+.btn-theme,
+.theme-bg {
+  background:#38f9d7;
+}
+
+
+.btn-theme {
+  border-color:#38f9d7;
+}
+
+.portfolio-hover-01 .action-btn a:hover,
+.portfolio-filter li:hover, 
+.portfolio-filter li.active,
+.owl-dots .owl-dot.active,
+.m-btn-theme, 
+.title-section h2:after,
+.m-btn-white:hover,
+.theme-after:after,
+.theme-g-bg{
+	background: #38f9d7;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #43e97b, #38f9d7);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #43e97b, #38f9d7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+
+/*Reverce*/
+.m-btn-theme:hover{
+	background: #0072ff;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #38f9d7, #43e97b);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #38f9d7, #43e97b); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.home-banner .avtar-img,
+.m-btn-theme:hover,
+.m-btn-white:hover {
+  box-shadow: 0px 15px 20px rgba(5, 117, 230, 0.4);
+}
+
+@media (max-width: 991px){
+  .header {
+    background:#38f9d7;
+  }
+}
+
+	
+

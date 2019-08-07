@@ -1,0 +1,63 @@
+::selection {
+  background-color:#56ab2f;
+  color: #fff;
+}
+::-moz-selection {
+  background-color:#56ab2f;
+  color: #fff;
+}
+
+
+
+.theme-color {
+  color:#56ab2f;
+}
+
+
+.theme-after-bg:after,
+.btn-theme,
+.theme-bg {
+  background:#56ab2f;
+}
+
+
+.btn-theme {
+  border-color:#56ab2f;
+}
+
+.portfolio-hover-01 .action-btn a:hover,
+.portfolio-filter li:hover, 
+.portfolio-filter li.active,
+.owl-dots .owl-dot.active,
+.m-btn-theme, 
+.title-section h2:after,
+.m-btn-white:hover,
+.theme-after:after,
+.theme-g-bg{
+	background: #56ab2f;
+	background: -webkit-linear-gradient(to right, #56ab2f, #a8e063);
+	background: linear-gradient(to right, #56ab2f, #a8e063);
+}
+
+
+/*Reverce*/
+.m-btn-theme:hover{
+	background: #0072ff;
+	background: -webkit-linear-gradient(to right, #a8e063, #56ab2f);
+	background: linear-gradient(to right, #a8e063, #56ab2f);
+}
+
+.home-banner .avtar-img,
+.m-btn-theme:hover,
+.m-btn-white:hover {
+  box-shadow: 0px 15px 20px rgba(5, 117, 230, 0.4);
+}
+
+@media (max-width: 991px){
+  .header {
+    background:#56ab2f;
+  }
+}
+
+	
+

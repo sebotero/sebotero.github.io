@@ -1,0 +1,63 @@
+::selection {
+  background-color:#feea3b;
+  color: #fff;
+}
+::-moz-selection {
+  background-color:#feea3b;
+  color: #fff;
+}
+
+
+
+.theme-color {
+  color:#feea3b;
+}
+
+
+.theme-after-bg:after,
+.btn-theme,
+.theme-bg {
+  background:#feea3b;
+}
+
+
+.btn-theme {
+  border-color:#feea3b;
+}
+
+.portfolio-hover-01 .action-btn a:hover,
+.portfolio-filter li:hover, 
+.portfolio-filter li.active,
+.owl-dots .owl-dot.active,
+.m-btn-theme, 
+.title-section h2:after,
+.m-btn-white:hover,
+.theme-after:after,
+.theme-g-bg{
+	background: #feea3b;
+	background: -webkit-linear-gradient(to right, #feea3b, #feea3b);
+	background: linear-gradient(to right, #feea3b, #feea3b);
+}
+
+
+/*Reverce*/
+.m-btn-theme:hover{
+	background: #0072ff;
+	background: -webkit-linear-gradient(to right, #feea3b, #feea3b);
+	background: linear-gradient(to right, #feea3b, #feea3b);
+}
+
+.home-banner .avtar-img,
+.m-btn-theme:hover,
+.m-btn-white:hover {
+  box-shadow: 0px 15px 20px rgba(5, 117, 230, 0.4);
+}
+
+@media (max-width: 991px){
+  .header {
+    background:#feea3b;
+  }
+}
+
+	
+
