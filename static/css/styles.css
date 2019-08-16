@@ -275,8 +275,32 @@ p {
   line-height: 1.6;
 }
 
-a {
+
+
+a > h4  {
+  /* color: #B1040E;
+  color: green; */
+  text-decoration: none;
+  color: #333;
+}
+
+a > h4:hover  {
+  /* color: #B1040E;
+  color: green; */
+  text-decoration: none;
   color: #B1040E;
+}
+
+p > a {
+  /* color: #B1040E;
+  color: green; */
+  text-decoration: none;
+  color: #B1040E;
+}
+
+a:hover {
+  text-decoration: none;
+  color: #B1040E !important;
 }
 
 .font-alt {
@@ -974,6 +998,7 @@ a.m-btn {
 
 .home-banner-04 .m-btn {
   min-width: 160px;
+  color: #B1040E;
   /* margin: 8px; */
 }
 
@@ -1240,7 +1265,7 @@ section#portfolio {
 .portfolio-col {
   padding: 10px;
   background: #fff;
-  box-shadow: 0px 1px 27px -3px rgba(0, 0, 0, 0.2);
+  /* box-shadow: 0px 1px 27px -3px rgba(0, 0, 0, 0.2); */
   border-radius: 5px;
 }
 .portfolio-col .portfolio-img {
@@ -1930,14 +1955,14 @@ blockquote.blockquote-left .parson { font-weight: 600; }
 
 .footer p {
   margin: 0;
-  text-align: left;
+  text-align: center;
 }
 
 
 .footer ul {
   font-size: 14px;
   font-weight: 600;
-  text-align: left;
+  text-align: center;
   padding-bottom: 50px;
 }
 
@@ -1973,11 +1998,11 @@ blockquote.blockquote-left .parson { font-weight: 600; }
   padding: 0 0 40px 0;
 }
 .footer .social-icons li a {
-  width: 40px;
-  font-size: 18px;
-  height: 40px;
+  width: 50px;
+  font-size: 25px;
+  height: 50px;
   text-align: center;
-  line-height: 40px;
+  line-height: 50px !important;
   color: #B1040E;
   background-color: white;
 }
