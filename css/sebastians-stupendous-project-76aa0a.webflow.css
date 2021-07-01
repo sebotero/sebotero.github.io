@@ -299,7 +299,7 @@ figcaption {
   margin-top: 10px;
   margin-bottom: 10px;
   font-family: Georgia, Times, 'Times New Roman', serif;
-  color: #666;
+  color: #444;
   font-size: 16px;
   line-height: 1.8;
   font-weight: 400;
@@ -307,17 +307,17 @@ figcaption {
 
 .post-summary.show-hide-1 {
   margin-left: 20px;
-  color: #666;
+  color: #444;
 }
 
 .post-summary.show-hide-2 {
   margin-left: 20px;
-  color: #666;
+  color: #444;
 }
 
 .post-summary.show-hide-3 {
   margin-left: 20px;
-  color: #666;
+  color: #444;
 }
 
 .post-summary.teaching-2 {
@@ -331,22 +331,22 @@ figcaption {
 
 .post-summary.show-hide-4 {
   margin-left: 20px;
-  color: #666;
+  color: #444;
 }
 
 .post-summary.show-hide-5 {
   margin-left: 20px;
-  color: #666;
+  color: #444;
 }
 
 .post-summary.show-hide-6 {
   margin-left: 20px;
-  color: #666;
+  color: #444;
 }
 
 .post-summary.show-hide-7 {
   margin-left: 20px;
-  color: #666;
+  color: #444;
 }
 
 .post-info {
@@ -463,6 +463,7 @@ figcaption {
   margin-top: 0px;
   margin-bottom: 20px;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  color: #222;
   font-size: 34px;
   line-height: 1.2;
 }
@@ -775,6 +776,7 @@ figcaption {
   margin-bottom: 20px;
   border-bottom: 1px solid #5d5d5d;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  color: #222;
   font-size: 24px;
   line-height: 37px;
 }
@@ -949,7 +951,7 @@ figcaption {
 }
 
 .link-15 {
-  color: #666;
+  color: #444;
   text-decoration: none;
 }
 
@@ -959,7 +961,7 @@ figcaption {
 }
 
 .link-16 {
-  color: #666;
+  color: #444;
   text-decoration: none;
 }
 
@@ -969,7 +971,7 @@ figcaption {
 }
 
 .link-17 {
-  color: #666;
+  color: #444;
   text-decoration: none;
 }
 
@@ -979,7 +981,7 @@ figcaption {
 }
 
 .link-18 {
-  color: #666;
+  color: #444;
   text-decoration: none;
 }
 
@@ -989,7 +991,7 @@ figcaption {
 }
 
 .link-19 {
-  color: #666;
+  color: #444;
   text-decoration: none;
 }
 
@@ -999,7 +1001,7 @@ figcaption {
 }
 
 .link-20 {
-  color: #666;
+  color: #444;
   text-decoration: none;
 }
 
@@ -1009,7 +1011,7 @@ figcaption {
 }
 
 .link-21 {
-  color: #666;
+  color: #444;
   text-decoration: none;
 }
 
@@ -1019,7 +1021,7 @@ figcaption {
 }
 
 .link-22 {
-  color: #666;
+  color: #444;
   text-decoration: none;
 }
 
@@ -1029,7 +1031,7 @@ figcaption {
 }
 
 .link-23 {
-  color: #666;
+  color: #444;
   text-decoration: none;
 }
 
@@ -1039,7 +1041,7 @@ figcaption {
 }
 
 .link-24 {
-  color: #666;
+  color: #444;
   text-decoration: none;
 }
 
@@ -1049,7 +1051,7 @@ figcaption {
 }
 
 .link-25 {
-  color: #666;
+  color: #444;
   text-decoration: none;
 }
 
@@ -1059,7 +1061,7 @@ figcaption {
 }
 
 .link-26 {
-  color: #666;
+  color: #444;
   text-decoration: none;
 }
 
@@ -1069,7 +1071,7 @@ figcaption {
 }
 
 .link-27 {
-  color: #666;
+  color: #444;
   text-decoration: none;
 }
 
@@ -1089,7 +1091,7 @@ figcaption {
 }
 
 .link-28 {
-  color: #666;
+  color: #444;
   text-decoration: none;
 }
 
@@ -1171,7 +1173,7 @@ figcaption {
 }
 
 .link-30 {
-  color: #666;
+  color: #444;
   text-decoration: none;
 }
 
