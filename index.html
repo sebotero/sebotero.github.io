@@ -4,546 +4,501 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sebastián Otero</title>
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <link rel="apple-touch-icon" href="images/webclip.png">
+    <meta name="description" content="Sebastián Otero - Assistant Professor of Economics at Columbia University. Applied microeconomist specializing in education markets and Latin America.">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        /* Reset & Base */
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        :root {
+            --blue: #4a7dc7;
+            --blue-hover: #3a6ab5;
+            --text: #333;
+            --text-light: #555;
+            --bg: #fff;
+            --section-bg: #f9f9f9;
+            --border: #e5e5e5;
+            --max-width: 1000px;
         }
 
+        html { scroll-behavior: smooth; }
+
         body {
-            font-family: Georgia, serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: #fff;
+            font-family: 'Georgia', 'Times New Roman', serif;
+            color: var(--text);
+            background: var(--bg);
+            line-height: 1.7;
+            font-size: 16px;
         }
+
+        a { color: var(--blue); text-decoration: none; transition: color 0.2s; }
+        a:hover { color: var(--blue-hover); text-decoration: underline; }
 
         /* Navigation */
         nav {
             position: sticky;
             top: 0;
-            background-color: #fff;
-            border-bottom: 1px solid #e0e0e0;
-            z-index: 1000;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            font-size: 14px;
+            background: var(--bg);
+            border-bottom: 1px solid var(--border);
+            z-index: 100;
+            padding: 0 2rem;
         }
 
-        nav ul {
+        .nav-inner {
+            max-width: var(--max-width);
+            margin: 0 auto;
             display: flex;
             align-items: center;
-            justify-content: center;
-            list-style: none;
-            max-width: 960px;
-            margin: 0 auto;
-            padding: 0 20px;
+            justify-content: space-between;
+            height: 60px;
         }
 
-        nav li {
-            margin: 0 25px;
-            padding: 16px 0;
-        }
-
-        nav li:first-child {
-            margin-right: auto;
-            font-weight: 500;
-            font-size: 16px;
-        }
-
-        nav a {
-            color: #333;
+        .nav-name {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--text);
             text-decoration: none;
-            transition: color 0.3s;
         }
 
-        nav a:hover {
-            color: #4a7dc7;
-        }
-
-        .nav-dot {
-            display: inline-block;
-            width: 8px;
-            height: 8px;
-            background-color: #4a7dc7;
-            border-radius: 50%;
-            margin-left: 4px;
+        .nav-name span {
+            color: var(--blue);
+            font-size: 1.5rem;
             vertical-align: middle;
         }
 
-        /* Main container */
-        .container {
-            max-width: 960px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
+        .nav-links { display: flex; gap: 2rem; }
 
-        /* Hero section */
-        .hero {
-            display: flex;
-            align-items: flex-start;
-            gap: 40px;
-            padding: 60px 20px;
-            max-width: 960px;
-            margin: 0 auto;
-        }
-
-        .hero-image {
-            flex-shrink: 0;
-        }
-
-        .hero-image img {
-            width: 280px;
-            height: auto;
-            border-radius: 4px;
-            display: block;
-        }
-
-        .hero-content {
-            flex: 1;
-        }
-
-        .hero-content h1 {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            font-size: 28px;
-            font-weight: 600;
-            margin-bottom: 20px;
-            color: #000;
-        }
-
-        .hero-content p {
-            margin-bottom: 20px;
-            line-height: 1.8;
-        }
-
-        .hero-buttons {
-            display: flex;
-            gap: 15px;
-            margin-bottom: 25px;
-            flex-wrap: wrap;
-        }
-
-        .cv-button {
-            display: inline-block;
-            background-color: #4a7dc7;
-            color: white;
-            padding: 10px 20px;
-            border-radius: 4px;
+        .nav-links a {
+            color: var(--blue);
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
             text-decoration: none;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            font-size: 14px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             font-weight: 500;
-            transition: background-color 0.3s;
         }
 
-        .cv-button:hover {
-            background-color: #3a6ba0;
+        .nav-links a:hover { text-decoration: underline; }
+
+        /* Hero / About */
+        .hero {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 3rem;
+            padding: 3rem 2rem;
+            align-items: start;
         }
 
-        .social-icons {
+        .hero-photo img {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 4px;
+        }
+
+        .hero-text p {
+            margin-bottom: 1.2rem;
+            font-size: 1.0rem;
+        }
+
+        .social-links {
             display: flex;
-            gap: 15px;
+            gap: 1rem;
+            margin-top: 1.5rem;
             align-items: center;
         }
 
-        .social-icon {
-            display: inline-block;
-            width: 32px;
-            height: 32px;
-            background-color: #f0f0f0;
-            border-radius: 50%;
-            display: flex;
+        .social-links a {
+            display: inline-flex;
             align-items: center;
             justify-content: center;
-            text-decoration: none;
-            transition: background-color 0.3s;
-            color: #333;
-            font-size: 16px;
+            width: 36px;
+            height: 36px;
+            color: var(--text);
+            transition: color 0.2s;
         }
 
-        .social-icon:hover {
-            background-color: #4a7dc7;
-            color: white;
-        }
+        .social-links a:hover { color: var(--blue); }
+
+        .social-links svg { width: 24px; height: 24px; fill: currentColor; }
 
         /* Sections */
-        section {
-            padding: 60px 20px;
-            max-width: 960px;
+        .section {
+            padding: 3rem 2rem;
+        }
+
+        .section:nth-child(even) { background: var(--section-bg); }
+
+        .section-inner {
+            max-width: var(--max-width);
             margin: 0 auto;
+            padding: 0 2rem;
         }
 
-        section h2 {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            font-size: 22px;
-            font-weight: 600;
-            margin-bottom: 30px;
-            border-bottom: 2px solid #f0f0f0;
-            padding-bottom: 10px;
+        .section h2 {
+            font-size: 1.6rem;
+            margin-bottom: 2rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--blue);
+            display: inline-block;
         }
 
-        /* Paper item */
+        /* Paper entries */
         .paper {
-            margin-bottom: 35px;
-            padding-bottom: 30px;
-            border-bottom: 1px solid #f0f0f0;
+            margin-bottom: 1rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 1px solid var(--border);
         }
 
-        .paper:last-child {
-            border-bottom: none;
-        }
+        .paper:last-child { border-bottom: none; padding-bottom: 0; }
 
-        .paper h3 {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            font-size: 16px;
+        .paper-title {
+            font-size: 1.05rem;
             font-weight: 600;
-            line-height: 1.5;
-            margin-bottom: 8px;
-            color: #000;
+            color: var(--blue);
         }
+
+        .paper-title a { font-weight: 600; }
 
         .paper-authors {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            font-size: 14px;
-            color: #555;
-            margin-bottom: 6px;
-        }
-
-        .paper-authors a {
-            color: #4a7dc7;
-            text-decoration: none;
-        }
-
-        .paper-authors a:hover {
-            text-decoration: underline;
+            font-size: 0.95rem;
+            color: var(--text-light);
+            margin-top: 0.2rem;
         }
 
         .paper-journal {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            font-size: 14px;
-            color: #555;
-            margin-bottom: 10px;
+            font-size: 0.95rem;
+            margin-top: 0.2rem;
         }
 
-        .paper-award {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            font-size: 13px;
-            color: #d9534f;
-            font-weight: 500;
-            margin-bottom: 8px;
+        .paper-journal em { font-style: italic; font-weight: 600; }
+
+        .paper-status {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin-top: 0.2rem;
+            font-style: italic;
+        }
+
+        .paper-status strong {
+            font-weight: 700;
         }
 
         .paper-links {
-            display: inline-flex;
-            gap: 12px;
-            flex-wrap: wrap;
-            align-items: center;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            font-size: 12px;
-            margin-bottom: 12px;
+            margin-top: 0.4rem;
+            font-size: 0.88rem;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
         }
 
-        .paper-link {
-            color: #4a7dc7;
-            text-decoration: none;
+        .paper-links a, .paper-links .abstract-toggle {
+            margin-right: 0.6rem;
+            white-space: nowrap;
         }
 
-        .paper-link:hover {
-            text-decoration: underline;
-        }
-
-        .paper-link::before {
-            content: "[";
-        }
-
-        .paper-link::after {
-            content: "]";
-        }
-
-        details {
-            display: inline;
-        }
-
-        details summary {
-            display: inline;
-            color: #4a7dc7;
+        .abstract-toggle {
+            color: var(--blue);
             cursor: pointer;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            font-size: 12px;
-            list-style: none;
+            font-size: 0.88rem;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: none;
+            border: none;
+            padding: 0;
+            transition: color 0.2s;
         }
 
-        details summary::-webkit-details-marker {
-            display: none;
-        }
-
-        details summary::before {
-            content: "[";
-        }
-
-        details summary::after {
-            content: "]";
-        }
-
-        details summary:hover {
+        .abstract-toggle:hover {
+            color: var(--blue-hover);
             text-decoration: underline;
         }
 
-        .abstract-text {
-            display: block;
-            margin-top: 12px;
-            margin-left: 12px;
-            padding: 12px 16px;
-            font-size: 13px;
-            color: #666;
+        .abstract-content {
+            display: none;
+            margin-top: 0.5rem;
+            padding: 0.8rem 1rem;
+            background: #f5f5f5;
+            border-left: 3px solid var(--blue);
+            font-size: 0.92rem;
             line-height: 1.6;
-            background-color: #f9f9f9;
-            border-left: 3px solid #e0e0e0;
+        }
+
+        .abstract-content.show {
+            display: block;
         }
 
         /* Footer */
         footer {
-            background-color: #f5f5f5;
-            padding: 30px 20px;
             text-align: center;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            font-size: 13px;
-            color: #666;
-            margin-top: 40px;
+            padding: 2rem;
+            font-size: 0.85rem;
+            color: #999;
+            border-top: 1px solid var(--border);
         }
 
-        /* Responsive design */
+        /* Responsive */
         @media (max-width: 768px) {
             .hero {
-                flex-direction: column;
-                padding: 40px 20px;
-                gap: 30px;
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 2rem;
+                padding: 2rem 1.5rem;
             }
+            .hero-photo img { max-width: 260px; margin: 0 auto; display: block; }
+            .social-links { justify-content: center; }
+            .nav-links { gap: 1.2rem; font-size: 0.85rem; }
+            .nav-name { font-size: 1.4rem; }
+            .nav-name span { font-size: 1.1rem; }
+            .section { padding: 2rem 1.5rem; }
+            .section h2 { font-size: 1.3rem; margin-bottom: 1.5rem; }
+            .paper-title { font-size: 1rem; }
+            .paper-links { display: flex; flex-wrap: wrap; gap: 0.3rem; }
+            .paper-links a, .paper-links .abstract-toggle { margin-right: 0; }
+        }
 
-            .hero-image img {
-                width: 100%;
-                max-width: 280px;
-            }
-
-            nav ul {
-                flex-wrap: wrap;
-                padding: 10px 20px;
-            }
-
-            nav li {
-                margin: 5px 15px;
-                padding: 8px 0;
-            }
-
-            nav li:first-child {
-                margin-right: auto;
-                flex-basis: 100%;
-            }
-
-            section {
-                padding: 40px 20px;
-            }
-
-            section h2 {
-                font-size: 18px;
-            }
-
-            .paper h3 {
-                font-size: 14px;
-            }
+        @media (max-width: 480px) {
+            .nav-inner { flex-direction: column; height: auto; padding: 0.8rem 0; gap: 0.5rem; }
+            .nav-links { gap: 0.8rem; flex-wrap: wrap; justify-content: center; }
+            .hero { padding: 1.5rem 1rem; gap: 1.5rem; }
+            .hero-photo img { max-width: 220px; }
+            .hero-text p { font-size: 0.95rem; }
+            .nav-name { font-size: 1.2rem; }
+            .nav-name span { font-size: 1rem; }
+            .section { padding: 1.5rem 1rem; }
+            .paper-authors { font-size: 0.88rem; }
+            .abstract-content { padding: 0.6rem 0.8rem; font-size: 0.85rem; }
         }
     </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav>
-        <ul>
-            <li><a href="#home">Sebastián Otero<span class="nav-dot"></span></a></li>
-            <li><a href="#about">ABOUT</a></li>
-            <li><a href="#publications">PUBLICATIONS</a></li>
-            <li><a href="#working-papers">WORKING PAPERS</a></li>
-            <li><a href="cv/cv_sebastian_otero.pdf">CV</a></li>
-        </ul>
-    </nav>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-image">
-            <img src="images/sebastian-otero-5-p-1080.jpeg" alt="Sebastián Otero">
+<!-- Navigation -->
+<nav>
+    <div class="nav-inner">
+        <a href="#" class="nav-name">Sebastián Otero<span>.</span></a>
+        <div class="nav-links">
+            <a href="#publications">Publications</a>
+            <a href="#working-papers">Working Papers</a>
+            <a href="#work-in-progress">In Progress</a>
+            <a href="cv/cv_sebastian_otero.pdf">CV</a>
         </div>
-        <div class="hero-content">
-            <h1>Sebastián Otero</h1>
-            <p>I am an economist interested in applied microeconomics, with a focus on industrial organization, labor economics, and the economics of education. My research uses techniques from econometrics, structural estimation, and causal inference to study the effects of policies on consumer and firm behavior, with applications to food labeling, traffic safety, college admissions, higher education markets, and online education.</p>
-            <div class="hero-buttons">
-                <a href="cv/cv_sebastian_otero.pdf" class="cv-button">Download CV</a>
-            </div>
-            <div class="social-icons">
-                <a href="https://www.linkedin.com/in/sebastian-otero-economist/" class="social-icon" target="_blank" title="LinkedIn">in</a>
-                <a href="https://scholar.google.com/citations?user=YOUR_SCHOLAR_ID" class="social-icon" target="_blank" title="Google Scholar">G</a>
-                <a href="https://github.com/sebotero" class="social-icon" target="_blank" title="GitHub">⚙</a>
+    </div>
+</nav>
+
+<!-- Hero -->
+<section class="section" id="home">
+    <div class="hero">
+        <div class="hero-photo">
+            <img src="images/seb_mila.jpeg" alt="Sebastián Otero">
+        </div>
+        <div class="hero-text">
+            <p>
+                I study how regulation reshapes markets. I build empirical models of firm and consumer behavior, combining reduced-form and structural methods with large-scale data to measure the equilibrium impacts of policy. My work focuses on food labeling and education.
+            </p>
+            <p>
+                I'm an Assistant Professor of Economics at <strong>Columbia University</strong>. I am also a Faculty Research Fellow at NBER and a Research Affiliate at IZA. I completed my PhD at Stanford and spent a year as a postdoctoral researcher at UC Berkeley. You can reach me at <a href="mailto:so2699@columbia.edu">so2699@columbia.edu</a>.
+            </p>
+
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/sebotero/" title="LinkedIn" target="_blank" rel="noopener">
+                    <svg viewBox="0 0 24 24"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"/></svg>
+                </a>
+                <a href="https://scholar.google.com/citations?user=qGak9VMAAAAJ&hl=en" title="Google Scholar" target="_blank" rel="noopener">
+                    <svg viewBox="0 0 24 24"><path d="M5.242 13.769L0 9.5 12 0l12 9.5-5.242 4.269C17.548 11.249 14.978 9.5 12 9.5c-2.977 0-5.548 1.748-6.758 4.269zM12 10a7 7 0 100 14 7 7 0 000-14z"/></svg>
+                </a>
+                <a href="https://github.com/sebotero" title="GitHub" target="_blank" rel="noopener">
+                    <svg viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                </a>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- About Section -->
-    <section id="about">
-        <h2>About</h2>
-        <p>I hold a Ph.D. in Economics from the University of Chicago and currently work as an economist. My research combines empirical analysis with structural economic modeling to understand how policies and market structures shape decision-making by consumers, workers, firms, and educational institutions.</p>
-    </section>
-
-    <!-- Publications Section -->
-    <section id="publications">
+<!-- Publications -->
+<section class="section" id="publications">
+    <div class="section-inner">
         <h2>Publications</h2>
 
         <div class="paper">
-            <h3>Equilibrium Effects of Food Labeling Policies</h3>
-            <div class="paper-authors">with <a href="https://hbaraho.github.io/">Nano Barahona</a> and <a href="https://sites.google.com/view/cristobalotero">Cristóbal Otero</a></div>
-            <div class="paper-journal"><strong>Econometrica</strong>, 91(3), May 2023, 839-868</div>
-            <div class="paper-links">
-                <a href="https://sebotero.github.io/papers/labels_ecma.pdf" class="paper-link">Ungated PDF</a>
-                <a href="https://hbaraho.github.io/papers/food_labels_cereal_appendix.pdf" class="paper-link">Online Appendix</a>
-                <a href="https://hbaraho.github.io/slides/foodlabels_cereal_slides.pdf" class="paper-link">Slides</a>
-                <a href="https://www.dropbox.com/s/2ukict1x1e7o8j1/Replication_files.zip?dl=0" class="paper-link">Codes</a>
-                <a href="https://www.youtube.com/watch?v=HWHGwxJwvP4&ab_channel=econimate" class="paper-link">Video</a>
-                <a href="https://www.ciperchile.cl/2021/05/24/ley-de-etiquetado-evaluando-sus-efectos-en-consumidores-y-empresas-de-alimentos/" class="paper-link">Policy Brief</a>
-                <details>
-                    <summary>Abstract</summary>
-                    <p class="abstract-text">We study a regulation in Chile that mandates warning labels on products whose sugar or caloric concentration exceeds certain thresholds. We show that consumers substitute from labeled to unlabeled products—a pattern mostly driven by products that consumers mistakenly believe to be healthy. On the supply side, we find substantial reformulation of products and bunching at the thresholds. We develop and estimate an equilibrium model of demand for food and firms' pricing and nutritional choices. We find that food labels increase consumer welfare by 1.8% of total expenditure, and that these effects are enhanced by firms' responses.</p>
-                </details>
+            <div class="paper-title">
+                1. Equilibrium Effects of Food Labeling Policies
             </div>
+            <div class="paper-authors">with <a href="https://hbaraho.github.io/" target="_blank" rel="noopener">Nano Barahona</a> and <a href="https://sites.google.com/view/cristobalotero" target="_blank" rel="noopener">Cristóbal Otero</a></div>
+            <div class="paper-journal"><em>Econometrica</em>, 91(3), May 2023, 839-868</div>
+            <div class="paper-links">
+                <button class="abstract-toggle" onclick="toggleAbstract(this)">[ Abstract ]</button>
+                <a href="https://sebotero.github.io/papers/labels_ecma.pdf" target="_blank" rel="noopener">[ Paper ]</a>
+                <a href="https://hbaraho.github.io/papers/food_labels_cereal_appendix.pdf" target="_blank" rel="noopener">[ Online Appendix ]</a>
+                <a href="https://hbaraho.github.io/slides/foodlabels_cereal_slides.pdf" target="_blank" rel="noopener">[ Slides ]</a>
+                <a href="https://www.dropbox.com/s/2ukict1x1e7o8j1/Replication_files.zip?dl=0" target="_blank" rel="noopener">[ Codes ]</a>
+                <a href="https://www.youtube.com/watch?v=HWHGwxJwvP4&ab_channel=econimate" target="_blank" rel="noopener">[ Video ]</a>
+                <a href="https://www.ciperchile.cl/2021/05/24/ley-de-etiquetado-evaluando-sus-efectos-en-consumidores-y-empresas-de-alimentos/" target="_blank" rel="noopener">[ Policy Brief ]</a>
+            </div>
+            <div class="abstract-content">We study a regulation in Chile that mandates warning labels on products whose sugar or caloric concentration exceeds certain thresholds. We show that consumers substitute from labeled to unlabeled products—a pattern mostly driven by products that consumers mistakenly believe to be healthy. On the supply side, we find substantial reformulation of products and bunching at the thresholds. We develop and estimate an equilibrium model of demand for food and firms' pricing and nutritional choices. We find that food labels increase consumer welfare by 1.8% of total expenditure, and that these effects are enhanced by firms' responses. We then use the model to study alternative policy designs. Under optimal policy thresholds, food labels and sugar taxes generate similar gains in consumer welfare, but food labels benefit the poor relatively more.</div>
         </div>
 
         <div class="paper">
-            <h3>The Effects of Drinking and Driving Laws on Car Crashes, Injuries, and Deaths: Evidence from Chile</h3>
-            <div class="paper-authors">with <a href="https://sites.google.com/site/tomasraubinder">Tomás Rau</a></div>
-            <div class="paper-journal"><strong>Accident Analysis and Prevention</strong>, 106, September 2017, 262-274</div>
-            <div class="paper-links">
-                <a href="https://sebotero.github.io/papers/drinking_and_driving.pdf" class="paper-link">Ungated PDF</a>
-                <a href="http://www.economiaynegocios.cl/noticias/noticias.asp?id=380290" class="paper-link">Media: El Mercurio</a>
-                <details>
-                    <summary>Abstract</summary>
-                    <p class="abstract-text">We analyze the effects of lowering the legal blood alcohol content limit for drivers from 0.05 to 0.03 g/dL and increasing license suspension periods for offenders. Results show a significant decrease of 32% in alcohol-related car accidents right after the law was approved, but the effects moderate over time (15% after three years). Evidence indicates that the law works by increasing sober driving, not by reducing drunk drivers' alcohol consumption.</p>
-                </details>
+            <div class="paper-title">
+                2. The Effects of Drinking and Driving Laws on Car Crashes, Injuries, and Deaths: Evidence from Chile
             </div>
+            <div class="paper-authors">with <a href="https://sites.google.com/site/tomasraubinder" target="_blank" rel="noopener">Tomás Rau</a></div>
+            <div class="paper-journal"><em>Accident Analysis and Prevention</em>, 106, September 2017, 262-274</div>
+            <div class="paper-links">
+                <button class="abstract-toggle" onclick="toggleAbstract(this)">[ Abstract ]</button>
+                <a href="https://sebotero.github.io/papers/drinking_and_driving.pdf" target="_blank" rel="noopener">[ Paper ]</a>
+                <a href="http://www.economiaynegocios.cl/noticias/noticias.asp?id=380290" target="_blank" rel="noopener">[ Media: El Mercurio ]</a>
+            </div>
+            <div class="abstract-content">This paper analyzes the effects of lowering the legal blood alcohol content limit for drivers from 0.05 to 0.03 grams of alcohol per deciliter of blood (g/dL) and increasing license suspension periods for offenders. We take advantage of a rich data set of administrative records that allow us to identify direct measures of accidents involving alcohol including fatalities and injuries. Results show a significant decrease of 32% in alcohol-related car accidents right after the law was approved but the effects moderate over time (15% after three years). There is also a significant reduction in injuries (31% right after the approval and 11% after three years) but no statistically significant effects on deaths. Complementary analysis of blood samples shows that the law had an effect on blood alcohol content (BAC) of male drivers up to the 90th percentile of the BAC distribution.</div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Working Papers Section -->
-    <section id="working-papers">
+<!-- Working Papers -->
+<section class="section" id="working-papers">
+    <div class="section-inner">
         <h2>Working Papers</h2>
 
         <div class="paper">
-            <h3>Affirmative Action in Centralized College Admissions Systems</h3>
-            <div class="paper-authors">with <a href="https://hbaraho.github.io/">Nano Barahona</a> and <a href="https://cauedobbin.com/">Cauê Dobbin</a></div>
-            <div class="paper-award">Winner of the Claire and Ralph Landau Prize 2022</div>
-            <div class="paper-links">
-                <a href="https://sebotero.github.io/papers/cotas_submission.pdf" class="paper-link">Paper</a>
-                <a href="https://www.hojeemdia.com.br/geral/lei-de-cotas-ajuda-a-reduzir-desigualdades-diz-universidade-americana-1.894976" class="paper-link">Media: Agência Brasil</a>
-                <details>
-                    <summary>Abstract</summary>
-                    <p class="abstract-text">We study the consequences of affirmative action in centralized college admissions systems. We develop an empirical framework to examine the effects of a large-scale program in Brazil that required all federal institutions to reserve half their seats for socioeconomically and racially marginalized groups. By exploiting admissions cutoffs, we find that marginally benefited students are more likely to attend college and are enrolled at higher-quality degrees four years later, while there are no observed impacts for marginally displaced non-targeted students.</p>
-                </details>
+            <div class="paper-title">
+                1. Affirmative Action in Centralized College Admissions Systems
             </div>
-        </div>
-
-        <div class="paper">
-            <h3>Equilibrium Price Responses to Targeted Student Financial Aid</h3>
-            <div class="paper-authors">with <a href="https://hbaraho.github.io/">Nano Barahona</a> and <a href="https://cauedobbin.com/">Cauê Dobbin</a></div>
-            <div class="paper-journal">Revised and submitted</div>
+            <div class="paper-authors">with <a href="https://hbaraho.github.io/" target="_blank" rel="noopener">Nano Barahona</a> and <a href="https://cauedobbin.com/" target="_blank" rel="noopener">Cauê Dobbin</a></div>
+            <div class="paper-status"><em>Winner of the Claire and Ralph Landau Prize 2022</em></div>
             <div class="paper-links">
-                <a href="https://sebotero.github.io/papers/eqLoans_badoot.pdf" class="paper-link">Paper</a>
-                <a href="https://www.nber.org/papers/w33833" class="paper-link">NBER WP</a>
-                <details>
-                    <summary>Abstract</summary>
-                    <p class="abstract-text">We study supply-side responses to student financial aid, focusing on how tuition responds to the targeting of aid. Our framework identifies two mechanisms: a direct effect, which raises tuition, and a composition effect, which can lower tuition if aid targets price-sensitive students. Leveraging a reform in Brazil's student loan program, we provide descriptive evidence that both mechanisms are quantitatively important, and estimate an equilibrium model of higher education to quantify the impact of alternative targeting schemes. A loan program with merit-based targeting increases tuition by 3.0%, while need-based targeting raises tuition by only 0.4%.</p>
-                </details>
+                <button class="abstract-toggle" onclick="toggleAbstract(this)">[ Abstract ]</button>
+                <a href="https://sebotero.github.io/papers/cotas_submission.pdf" target="_blank" rel="noopener">[ Paper ]</a>
+                <a href="https://www.hojeemdia.com.br/geral/lei-de-cotas-ajuda-a-reduzir-desigualdades-diz-universidade-americana-1.894976" target="_blank" rel="noopener">[ Media: Agência Brasil ]</a>
             </div>
+            <div class="abstract-content">We study the consequences of affirmative action in centralized college admissions systems. We develop an empirical framework to examine the effects of a large-scale program in Brazil that required all federal institutions to reserve half their seats for socioeconomically and racially marginalized groups. By exploiting admissions cutoffs, we find that marginally benefited students are more likely to attend college and are enrolled at higher-quality degrees four years later. Meanwhile, there are no observed impacts for marginally displaced non-targeted students. To study the effects of larger changes in affirmative action, we estimate a joint model of school choices and potential outcomes. We find that the policy has impacts on college attendance and persistence that imply a virtually one-to-one income transfer from the non-targeted to the targeted group. These findings indicate that introducing affirmative action can increase equity without affecting efficiency.</div>
         </div>
 
         <div class="paper">
-            <h3>The Effects of Widespread Online Education on Market Structure and Enrollment</h3>
-            <div class="paper-authors">with <a href="https://hbaraho.github.io/">Nano Barahona</a> and <a href="https://cauedobbin.com/">Cauê Dobbin</a></div>
-            <div class="paper-journal">Reject & Resubmit at the Quarterly Journal of Economics</div>
+            <div class="paper-title">
+                2. Equilibrium Price Responses to Targeted Student Financial Aid
+            </div>
+            <div class="paper-authors">with <a href="https://hbaraho.github.io/" target="_blank" rel="noopener">Nano Barahona</a> and <a href="https://cauedobbin.com/" target="_blank" rel="noopener">Cauê Dobbin</a></div>
+            <div class="paper-status">Revised and submitted</div>
             <div class="paper-links">
-                <a href="https://sebotero.github.io/papers/onlineeduc.pdf" class="paper-link">Paper</a>
-                <a href="https://www.nber.org/papers/w34522" class="paper-link">NBER WP</a>
-                <a href="https://www.promarket.org/2026/02/09/how-online-degrees-are-reshaping-competition-in-higher-education/" class="paper-link">Policy Brief</a>
-                <details>
-                    <summary>Abstract</summary>
-                    <p class="abstract-text">We study the rapid expansion of Brazil's private online higher-education sector. Online programs expand access for older students but divert younger students from higher-quality in-person programs. Greater competition lowers tuition prices but also reduces the supply of in-person degrees. In the absence of online programs, total enrollment would be 14% lower, while in-person enrollment would rise by 33%. On net, aggregate labor-market value added declines by 1.4%. Online education raises value added for older students but lowers it for younger students, who shift toward lower-return online options.</p>
-                </details>
+                <button class="abstract-toggle" onclick="toggleAbstract(this)">[ Abstract ]</button>
+                <a href="https://sebotero.github.io/papers/eqLoans_badoot.pdf" target="_blank" rel="noopener">[ Paper ]</a>
+                <a href="https://www.nber.org/papers/w33833?utm_campaign=ntwh&utm_medium=email&utm_source=ntwg25" target="_blank" rel="noopener">[ NBER WP ]</a>
             </div>
+            <div class="abstract-content">We study how colleges adjust tuition in response to student financial aid, emphasizing the role of targeting. Our framework highlights two forces: a direct effect that increases tuition, and a composition effect that can reduce tuition when aid targets more price-sensitive students. Using a reform in Brazil's student loan program, we document both effects empirically and estimate an equilibrium model to evaluate counterfactual policies. We find that merit-based targeting raises tuition by 2.2%, while need-based targeting lowers it by 0.8%, reflecting that lower-income students are more price-sensitive. These price effects have a strong impact on enrollment decisions.</div>
         </div>
 
         <div class="paper">
-            <h3>Food Labeling Policies: Aggregate Impacts and Heterogeneity Across Categories</h3>
-            <div class="paper-authors">with <a href="https://hbaraho.github.io/">Nano Barahona</a>, <a href="https://sites.google.com/view/cristobalotero">Cristóbal Otero</a>, and Joshua Kim</div>
-            <div class="paper-journal">Revise & Resubmit at the American Economic Journal: Economic Policy</div>
+            <div class="paper-title">
+                3. The Effects of Widespread Online Education on Market Structure and Enrollment
+            </div>
+            <div class="paper-authors">with <a href="https://hbaraho.github.io/" target="_blank" rel="noopener">Nano Barahona</a> and <a href="https://cauedobbin.com/" target="_blank" rel="noopener">Cauê Dobbin</a></div>
+            <div class="paper-status">Reject &amp; Resubmit at the <strong><em>Quarterly Journal of Economics</em></strong></div>
             <div class="paper-links">
-                <details>
-                    <summary>Abstract</summary>
-                    <p class="abstract-text">We study the aggregate and heterogeneous effects of a front-of-package labeling policy implemented in Chile. Consumers reduced their sugar and caloric intake by 9% and 6%, respectively, with labels prompting consumers to substitute within categories rather than switching between categories. Within-category responses are more pronounced when labels provide new information. On the supply side, we observe bunching at regulatory thresholds, with substantial heterogeneity across categories, consistent with differing costs of product reformulation.</p>
-                </details>
+                <button class="abstract-toggle" onclick="toggleAbstract(this)">[ Abstract ]</button>
+                <a href="https://sebotero.github.io/papers/onlineeduc.pdf" target="_blank" rel="noopener">[ Paper ]</a>
+                <a href="https://www.nber.org/papers/w34522" target="_blank" rel="noopener">[ NBER WP ]</a>
+                <a href="https://www.promarket.org/2026/02/09/how-online-degrees-are-reshaping-competition-in-higher-education/" target="_blank" rel="noopener">[ Policy Brief ]</a>
             </div>
+            <div class="abstract-content">We study the rapid expansion of Brazil's private online higher-education sector and its effects on market structure and college enrollment. Exploiting regional and field-specific variation in online education penetration, we find that online programs expand access for older students but divert younger students from higher-quality in-person programs. Greater competition lowers tuition prices but also reduces the supply of in-person degrees. Using an equilibrium model of college education, we show that in the absence of online programs, total enrollment would be 14 percent lower, while in-person enrollment would rise by 33 percent. On net, aggregate labor-market value added declines by 1.4 percent. Online education raises value added for older students, who benefit from increased access, but lowers it for younger students, who shift toward lower-return online options. Counterfactual policies that restrict online enrollment to older cohorts could increase value added for younger students without reducing gains for older cohorts.</div>
         </div>
 
         <div class="paper">
-            <h3>The Global Gender Gap in STEM Applications: Pipeline vs. Choice</h3>
-            <div class="paper-authors">with I. Ahimbisibwe, A. Altjmed, G. Artemov, A. Barrios-Fernández, A. Bizopoulou, M. Kaila, J. Liu, R. Megalokonomou, J. Montalbán, <a href="https://christopherneilson.github.io/">C. Neilson</a>, J. Sun, and X. Ye</div>
-            <div class="paper-journal">Revise & Resubmit at the Economics of Education Review</div>
+            <div class="paper-title">
+                4. Food Labeling Policies: Aggregate Impacts and Heterogeneity Across Categories
+            </div>
+            <div class="paper-authors">with <a href="https://hbaraho.github.io/" target="_blank" rel="noopener">Nano Barahona</a>, <a href="https://sites.google.com/view/cristobalotero" target="_blank" rel="noopener">Cristóbal Otero</a>, and <a href="https://josh-kim.github.io/" target="_blank" rel="noopener">Joshua Kim</a></div>
+            <div class="paper-status">Revise &amp; Resubmit at the <strong><em>American Economic Journal: Economic Policy</em></strong></div>
             <div class="paper-links">
-                <details>
-                    <summary>Abstract</summary>
-                    <p class="abstract-text">Women account for only 35% of global STEM graduates, a share unchanged for a decade. Using administrative microdata from centralized university admissions in ten systems, we deliver the first cross-national decomposition of the STEM gender gap into a pipeline gap (academic preparedness) and a choice gap (first-choice field conditional on eligibility). The pipeline gap varies widely, from -19 to +31 percentage points across education systems. By contrast, the choice gap is remarkably stable: high-scoring women are 25 percentage points less likely than men to rank STEM first.</p>
-                </details>
+                <button class="abstract-toggle" onclick="toggleAbstract(this)">[ Abstract ]</button>
+                <a href="https://sebotero.github.io/papers/foodlabels_policy.pdf" target="_blank" rel="noopener">[ Paper ]</a>
             </div>
+            <div class="abstract-content">We study the aggregate and heterogeneous effects of a front-of-package labeling policy implemented in Chile. We find that consumers reduced their sugar and caloric intake by 9% and 6%, respectively. On the demand side, labels prompt consumers to substitute within categories rather than switching between categories. Within-category responses are more pronounced when labels provide new information. On the supply side, we observe bunching at regulatory thresholds, with substantial heterogeneity across categories, consistent with differing costs of product reformulation. We conclude that considering policy-response heterogeneity is key for effective policy design.</div>
         </div>
 
         <div class="paper">
-            <h3>Skin in the Game: College's Financial Incentives and Student Outcomes</h3>
-            <div class="paper-authors">with <a href="https://hbaraho.github.io/">Nano Barahona</a>, <a href="https://cauedobbin.com/">Cauê Dobbin</a>, Hanson Ho, and <a href="https://www.yannelis.com/">Constantine Yannelis</a></div>
+            <div class="paper-title">
+                5. The Global Gender Gap in STEM Applications: Pipeline vs. Choice
+            </div>
+            <div class="paper-authors">with I. Ahimbisibwe, A. Altjmed, G. Artemov, A. Barrios-Fernández, A. Bizopoulou, M. Kaila, J. Liu, R. Megalokonomou, J. Montalbán, <a href="https://christopherneilson.github.io/" target="_blank" rel="noopener">C. Neilson</a>, J. Sun, and X. Ye</div>
+            <div class="paper-status">Revise &amp; Resubmit at the <strong><em>Economics of Education Review</em></strong></div>
             <div class="paper-links">
-                <details>
-                    <summary>Abstract</summary>
-                    <p class="abstract-text">Governments can penalize institutions with high dropout or loan default rates. Institutions can respond by increasing quality or changing the selection of students. We study a 2017 reform in Brazil which made schools pay a fee for students receiving federal student loans that dropped out or defaulted. Consistent with the predictions of our model, we find that schools more reliant on government aid reduced dropout rates, primarily by increasing quality.</p>
-                </details>
+                <button class="abstract-toggle" onclick="toggleAbstract(this)">[ Abstract ]</button>
+                <a href="https://sebotero.github.io/papers/stem_gap_multicountry.pdf" target="_blank" rel="noopener">[ Paper ]</a>
             </div>
+            <div class="abstract-content">Women make up only 35% of global STEM graduates, a share unchanged for a decade. Using administrative data from ten centralized university admissions systems, we provide the first cross-national decomposition of the STEM gender gap into a pipeline gap (access and preparedness) and a choice gap (application decisions). The pipeline gap varies widely—from female disadvantage in Uganda to advantage in Sweden—yet the choice gap is strikingly consistent: even among top scorers, women are 25 percentage points less likely than men to apply to STEM. This stability across diverse contexts points to structural forces beyond local conditions.</div>
         </div>
 
         <div class="paper">
-            <h3>The Equilibrium Effects of Public Provision in Education Markets</h3>
-            <div class="paper-authors">with <a href="https://sites.google.com/site/michaeldinerstein/">Michael Dinerstein</a>, Daniel Morales, and <a href="https://christopherneilson.github.io/">Christopher Neilson</a></div>
+            <div class="paper-title">
+                6. Skin in the Game: College's Financial Incentives and Student Outcomes
+            </div>
+            <div class="paper-authors">with <a href="https://hbaraho.github.io/" target="_blank" rel="noopener">Nano Barahona</a>, <a href="https://cauedobbin.com/" target="_blank" rel="noopener">Cauê Dobbin</a>, Hanson Ho, and <a href="https://www.yannelis.com" target="_blank" rel="noopener">Constantine Yannelis</a></div>
             <div class="paper-links">
-                <details>
-                    <summary>Abstract</summary>
-                    <p class="abstract-text">We study the equilibrium effects of public provision in the context of a large expansion of public schools in the Dominican Republic. A new public school increased public sector enrollment significantly. As public enrollment increased, a large number of private schools closed while the surviving schools lowered prices and increased school quality. Due to equilibrium competitive effects, the optimal level of public provision is non-monotonic in the quality of the increased public schooling.</p>
-                </details>
+                <button class="abstract-toggle" onclick="toggleAbstract(this)">[ Abstract ]</button>
+                <a href="https://sebotero.github.io/papers/skiningame_postedversion.pdf" target="_blank" rel="noopener">[ Paper ]</a>
+                <a href="#" target="_blank" rel="noopener">[ Media: WSJ ]</a>
             </div>
+            <div class="abstract-content">This paper studies how schools respond to financial incentives. Governments can penalize institutions with high dropout or loan default rates, and these institutions can respond by increasing quality or changing the selection of students. We study the predictions of the model using a 2017 reform in Brazil, which made schools pay a fee for students receiving federal student loans that dropped out or defaulted. Consistent with the predictions of the model, we find that schools more reliant on government aid reduced dropout rates, primarily by increasing quality. We build an equilibrium model to illustrate the trade-off faced by policymakers, and use our estimates to study optimal policy. We find that schools should pay for approximately half of all dollars charged off in default.</div>
         </div>
 
         <div class="paper">
-            <h3>A Horizon Scan of AI and Higher Education: Fourteen Issues That May Transform the Sector</h3>
-            <div class="paper-authors">with SJ Beard, K. Roehrick, J. Beadle, G. Brinkworth, M. Compton, K. Crawford, M. Ennion, L. Gharavi, C. Gordon, V. Hillman, D. Madigan, A. Marcoci, A. Marwick, A. Nelson, M. Pittinsky, S. Walker, D. Wang, G. Zapata, and M. Connelly</div>
-        </div>
-    </section>
-
-    <!-- Work in Progress Section -->
-    <section id="work-in-progress">
-        <h2>Work in Progress</h2>
-
-        <div class="paper">
-            <h3>Equalizing the Great Equalizer: The Long-run Consequences of School Funding Reforms</h3>
-            <div class="paper-authors">with <a href="https://clairemontialoux.com/">Claire Montialoux</a> and <a href="https://sites.google.com/view/robertohsurocha/home">Roberto Hsu Rocha</a></div>
+            <div class="paper-title">
+                7. The Equilibrium Effects of Public Provision in Education Markets
+            </div>
+            <div class="paper-authors">with <a href="https://sites.google.com/site/michaeldinerstein/" target="_blank" rel="noopener">Michael Dinerstein</a>, Daniel Morales, and <a href="https://christopherneilson.github.io/" target="_blank" rel="noopener">Christopher Neilson</a></div>
+            <div class="paper-links">
+                <button class="abstract-toggle" onclick="toggleAbstract(this)">[ Abstract ]</button>
+                <a href="https://sebotero.github.io/papers/DNO_draft.pdf" target="_blank" rel="noopener">[ Paper ]</a>
+            </div>
+            <div class="abstract-content">In markets with existing private options, the optimal level of public provision may require balancing a tradeoff between reducing private options' market power with the possibility of crowding out high-quality products. We study the equilibrium effects of public education provision in the Dominican Republic, where the government aimed to increase the number of public school classrooms by 78% over a four-year period. We use an event study framework to estimate the effect of a new public school on local outcomes. We estimate that despite increasing local students' hours of instruction, a new public school does not have an effect on local students' test scores. But this null result hides considerable changes in students' schooling options. We find that a new public school increased public sector enrollment significantly. As public enrollment increased, a large number of private schools closed while the surviving schools lowered prices and increased school quality. To study whether different levels of public provision may have had non-zero effects on student achievement, we specify and estimate an empirical model of demand (students choosing schools) and supply (schools choosing whether to enter, stay open, and what price to charge). We estimate that a larger increase in public provision would have maximized student learning by further reducing private schools' market power without crowding out the highest quality private schools. Due to equilibrium competitive effects, we find that the optimal level is non-monotonic in the quality of the increased public schooling.</div>
         </div>
 
         <div class="paper">
-            <h3>Demand Shocks and Firm Dynamics: Evidence from Government Procurement Lotteries</h3>
-            <div class="paper-authors">with Marvin Cardoza, <a href="https://sites.google.com/site/michaeldinerstein/">Michael Dinerstein</a>, and <a href="https://christopherneilson.github.io/">Christopher Neilson</a></div>
+            <div class="paper-title">
+                8. A Horizon Scan of AI and Higher Education: Fourteen Issues That May Transform the Sector
+            </div>
+            <div class="paper-authors">with SJ Beard, K. Roehrick, J. Beadle, G. Brinkworth, M. Compton, K. Crawford, M. Ennion, L. Gharavi, C. Gordon, V. Hillman, D. Madigan, A. Marcoci, A. Marwick, A. Nelson, M. Pittinsky, S. Walker, D. Wang, G. Zapata, M. Connelly</div>
+            <div class="paper-links">
+                <button class="abstract-toggle" onclick="toggleAbstract(this)">[ Abstract ]</button>
+                <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6257318" target="_blank" rel="noopener">[ Paper ]</a>
+            </div>
+            <div class="abstract-content">AI, and especially Generative AI, are profoundly affecting higher education, challenging longstanding philosophical, pedagogical, cultural, and economic assumptions and reshaping its core practices. Much current research is trying to understand and assess these impacts; however, future trends and developments could be even more disruptive for both faculty and students. This paper provides a longer-term perspective in the form of a horizon scan, using the IDEA protocol with a group of 27 education and AI experts from the UK and USA to identify and evaluate future issues that may significantly impact the sector but have yet to reach prominence in discussions within the sector. It identifies 14 issues (from an initial longlist of 72) with the highest potential impact over both the near-term (such as data privacy, shadow curricula, and personalized education) and the longer-term (such as AI learning companions, the dematerialization of universities, and the need to prepare for existential risk). It also identifies important cross-cutting themes that arise from these issues: reflecting on the real value of education, understanding social aspects of learning, and the social and political context of AI deployment. The paper seeks to support educators in moving from a reactive approach to handling AI impacts towards a more proactive approach of planning for possible future social and technological transitions and providing students with the skills and resources needed to navigate them.</div>
         </div>
-    </section>
 
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2026 Sebastián Otero</p>
-    </footer>
+    </div>
+</section>
+
+<!-- In Progress -->
+<section class="section" id="work-in-progress">
+    <div class="section-inner">
+        <h2>In Progress</h2>
+
+        <div class="paper">
+            <div class="paper-title">
+                Equalizing the Great Equalizer: The Long-run Consequences of School Funding Reforms
+            </div>
+            <div class="paper-authors">with <a href="https://clairemontialoux.com/" target="_blank" rel="noopener">Claire Montialoux</a> and <a href="https://sites.google.com/view/robertohsurocha/" target="_blank" rel="noopener">Roberto Hsu Rocha</a></div>
+        </div>
+
+        <div class="paper">
+            <div class="paper-title">
+                Demand Shocks and Firm Dynamics: Evidence from Government Procurement Lotteries
+            </div>
+            <div class="paper-authors">with Marvin Cardoza, <a href="https://sites.google.com/site/michaeldinerstein/" target="_blank" rel="noopener">Michael Dinerstein</a>, and <a href="https://christopherneilson.github.io/" target="_blank" rel="noopener">Christopher Neilson</a></div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>
+    &copy; 2026 Sebastián Otero
+</footer>
+
+<script>
+function toggleAbstract(btn) {
+    var content = btn.closest('.paper').querySelector('.abstract-content');
+    content.classList.toggle('show');
+}
+</script>
+
 </body>
 </html>
