@@ -1,4 +1,166 @@
-<!DOCTYPE html><!--  This site was created in Webflow. http://www.webflow.com  -->
-<!--  Last Published: Thu Apr 14 2022 21:13:48 GMT+0000 (Coordinated Universal Time)  -->
-
-<meta http-equiv="Refresh" content="0; url='https://sebotero.webflow.io'" />
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sebastián Otero</title>
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <link rel="apple-touch-icon" href="images/webclip.png">
+    <meta name="description" content="Sebastián Otero - Assistant Professor of Economics at Columbia University. Applied microeconomist specializing in education markets and Latin America.">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        :root { --blue: #4a7dc7; --blue-hover: #3a6ab5; --text: #333; --text-light: #555; --bg: #fff; --section-bg: #f9f9f9; --border: #e5e5e5; --max-width: 960px; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Georgia', 'Times New Roman', serif; color: var(--text); background: var(--bg); line-height: 1.7; font-size: 16px; }
+        a { color: var(--blue); text-decoration: none; transition: color 0.2s; }
+        a:hover { color: var(--blue-hover); text-decoration: underline; }
+        nav { position: sticky; top: 0; background: var(--bg); border-bottom: 1px solid var(--border); z-index: 100; padding: 0 2rem; }
+        .nav-inner { max-width: var(--max-width); margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 60px; }
+        .nav-name { font-size: 1.4rem; font-weight: bold; color: var(--text); text-decoration: none; }
+        .nav-name span { color: var(--blue); }
+        .nav-links { display: flex; gap: 2rem; }
+        .nav-links a { color: var(--blue); font-size: 0.95rem; text-transform: uppercase; letter-spacing: 0.03em; text-decoration: none; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-weight: 500; }
+        .nav-links a:hover { text-decoration: underline; }
+        .hero { max-width: var(--max-width); margin: 0 auto; display: grid; grid-template-columns: 1fr 1.2fr; gap: 3rem; padding: 3rem 2rem; align-items: start; }
+        .hero-photo img { width: 100%; max-width: 400px; border-radius: 4px; }
+        .hero-text p { margin-bottom: 1.2rem; font-size: 1.05rem; }
+        .hero-text strong { font-weight: 700; }
+        .social-links { display: flex; gap: 1rem; margin-top: 1.5rem; align-items: center; }
+        .social-links a { display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 36px; color: var(--text); transition: color 0.2s; }
+        .social-links a:hover { color: var(--blue); }
+        .social-links svg { width: 24px; height: 24px; fill: currentColor; }
+        .cv-btn { display: inline-block; margin-top: 1rem; padding: 0.5rem 1.2rem; border: 2px solid var(--blue); color: var(--blue); font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 0.9rem; font-weight: 500; border-radius: 4px; transition: all 0.2s; }
+        .cv-btn:hover { background: var(--blue); color: #fff; text-decoration: none; }
+        .section { padding: 3rem 2rem; }
+        .section:nth-child(even) { background: var(--section-bg); }
+        .section-inner { max-width: var(--max-width); margin: 0 auto; }
+        .section h2 { font-size: 1.6rem; margin-bottom: 2rem; padding-bottom: 0.5rem; border-bottom: 2px solid var(--blue); display: inline-block; }
+        .paper { margin-bottom: 2rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--border); }
+        .paper:last-child { border-bottom: none; padding-bottom: 0; }
+        .paper-title { font-size: 1.05rem; font-weight: 600; color: var(--blue); }
+        .paper-title a { font-weight: 600; }
+        .paper-authors { font-size: 0.95rem; color: var(--text-light); margin-top: 0.25rem; }
+        .paper-journal { font-size: 0.95rem; margin-top: 0.25rem; }
+        .paper-journal em { font-style: italic; font-weight: 600; }
+        .paper-status { font-size: 0.9rem; color: var(--text-light); margin-top: 0.25rem; font-style: italic; }
+        .paper-links { margin-top: 0.5rem; font-size: 0.88rem; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+        .paper-links a { margin-right: 0.6rem; white-space: nowrap; }
+        footer { text-align: center; padding: 2rem; font-size: 0.85rem; color: #999; border-top: 1px solid var(--border); }
+        @media (max-width: 700px) { .hero { grid-template-columns: 1fr; text-align: center; } .hero-photo img { max-width: 280px; margin: 0 auto; } .social-links { justify-content: center; } .nav-links { gap: 1rem; font-size: 0.85rem; } .nav-name { font-size: 1.1rem; } }
+        @media (max-width: 480px) { .nav-inner { flex-direction: column; height: auto; padding: 0.8rem 0; gap: 0.5rem; } .nav-links { gap: 0.8rem; } }
+    </style>
+</head>
+<body>
+<nav>
+    <div class="nav-inner">
+        <a href="#" class="nav-name">Sebastián Otero<span>.</span></a>
+        <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="#publications">Publications</a>
+            <a href="#working-papers">Working Papers</a>
+            <a href="cv/cv_sebastian_otero.pdf">CV</a>
+        </div>
+    </div>
+</nav>
+<section class="section" id="about">
+    <div class="hero">
+        <div class="hero-photo">
+            <img src="images/sebastian-otero-5-p-1080.jpeg" alt="Sebastián Otero">
+        </div>
+        <div class="hero-text">
+            <p>I'm an <strong>applied microeconomist.</strong> My primary research focuses on structural changes in education markets, with special emphasis on <strong>Latin America.</strong></p>
+            <p>I'm an Assistant Professor of Economics at <strong>Columbia University.</strong> I am also a Faculty Research Fellow at <strong>NBER</strong> and a Research Affiliate at <strong>IZA.</strong> I completed my PhD at Stanford and spent a year as a postdoctoral researcher at UC Berkeley. You can reach me at <em>so2699@columbia.edu</em></p>
+            <a href="cv/cv_sebastian_otero.pdf" class="cv-btn">Download CV ↓</a>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/sebotero/" title="LinkedIn" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"/></svg></a>
+                <a href="https://scholar.google.com/citations?user=qGak9VMAAAAJ&hl=en" title="Google Scholar" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M5.242 13.769L0 9.5 12 0l12 9.5-5.242 4.269C17.548 11.249 14.978 9.5 12 9.5c-2.977 0-5.548 1.748-6.758 4.269zM12 10a7 7 0 100 14 7 7 0 000-14z"/></svg></a>
+                <a href="https://github.com/sebotero" title="GitHub" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="section" id="publications">
+    <div class="section-inner">
+        <h2>Publications</h2>
+        <div class="paper">
+            <div class="paper-title"><a href="https://sebotero.github.io/papers/labels_ecma.pdf">1. Equilibrium Effects of Food Labeling Policies</a></div>
+            <div class="paper-authors">with <a href="https://hbaraho.github.io/">Nano Barahona</a> and <a href="https://sites.google.com/view/cristobalotero">Cristóbal Otero</a></div>
+            <div class="paper-journal"><em>Econometrica</em>, 91(3), May 2023, 839-868</div>
+            <div class="paper-links">
+                <a href="https://sebotero.github.io/papers/labels_ecma.pdf">[ Ungated PDF ]</a>
+                <a href="https://hbaraho.github.io/papers/food_labels_cereal_appendix.pdf">[ Online Appendix ]</a>
+                <a href="https://hbaraho.github.io/slides/foodlabels_cereal_slides.pdf">[ Slides ]</a>
+                <a href="https://www.dropbox.com/s/2ukict1x1e7o8j1/Replication_files.zip?dl=0">[ Codes ]</a>
+                <a href="https://www.youtube.com/watch?v=HWHGwxJwvP4&ab_channel=econimate">[ Video ]</a>
+                <a href="https://www.ciperchile.cl/2021/05/24/ley-de-etiquetado-evaluando-sus-efectos-en-consumidores-y-empresas-de-alimentos/">[ Policy Brief ]</a>
+            </div>
+        </div>
+        <div class="paper">
+            <div class="paper-title"><a href="https://www.sciencedirect.com/science/article/abs/pii/S000145751730194X">2. The Effects of Drinking and Driving Laws on Car Crashes, Injuries, and Deaths: Evidence from Chile</a></div>
+            <div class="paper-authors">with <a href="https://sites.google.com/site/tomasraubinder">Tomás Rau</a></div>
+            <div class="paper-journal"><em>Accident Analysis and Prevention</em>, 106, September 2017, 262-274</div>
+            <div class="paper-links">
+                <a href="https://sebotero.github.io/papers/drinking_and_driving.pdf">[ Ungated PDF ]</a>
+                <a href="http://www.economiaynegocios.cl/noticias/noticias.asp?id=380290">[ Media: El Mercurio ]</a>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="section" id="working-papers">
+    <div class="section-inner">
+        <h2>Working Papers</h2>
+        <div class="paper">
+            <div class="paper-title"><a href="https://sebotero.github.io/papers/cotas_submission.pdf">1. Affirmative Action in Centralized College Admissions Systems</a></div>
+            <div class="paper-authors">with <a href="https://hbaraho.github.io/">Nano Barahona</a> and Cauê Dobbin</div>
+            <div class="paper-status">Winner of the Claire and Ralph Landau Prize 2022</div>
+            <div class="paper-links"><a href="https://www.hojeemdia.com.br/geral/lei-de-cotas-ajuda-a-reduzir-desigualdades-diz-universidade-americana-1.894976">[ Media: Agência Brasil ]</a></div>
+        </div>
+        <div class="paper">
+            <div class="paper-title"><a href="https://sebotero.github.io/papers/eqLoans_badoot.pdf">2. Equilibrium Price Responses to Targeted Student Financial Aid</a></div>
+            <div class="paper-authors">with <a href="https://hbaraho.github.io/">Nano Barahona</a> and Cauê Dobbin</div>
+            <div class="paper-status">Revised and submitted</div>
+            <div class="paper-links"><a href="https://www.nber.org/papers/w33833?utm_campaign=ntwh&utm_medium=email&utm_source=ntwg25">[ NBER WP ]</a></div>
+        </div>
+        <div class="paper">
+            <div class="paper-title"><a href="https://sebotero.github.io/papers/onlineeduc.pdf">3. The Effects of Widespread Online Education on Market Structure and Enrollment</a></div>
+            <div class="paper-authors">with <a href="https://hbaraho.github.io/">Nano Barahona</a> and Cauê Dobbin</div>
+            <div class="paper-status">Reject &amp; Resubmit at the Quarterly Journal of Economics</div>
+            <div class="paper-links"><a href="https://www.nber.org/papers/w34522">[ NBER WP ]</a> <a href="https://www.promarket.org/2026/02/09/how-online-degrees-are-reshaping-competition-in-higher-education/">[ Policy Brief ]</a></div>
+        </div>
+        <div class="paper">
+            <div class="paper-title">4. Food Labeling Policies: Aggregate Impacts and Heterogeneity Across Categories</div>
+            <div class="paper-authors">with <a href="https://hbaraho.github.io/">Nano Barahona</a>, <a href="https://sites.google.com/view/cristobalotero">Cristóbal Otero</a>, and Joshua Kim</div>
+            <div class="paper-status">Revise &amp; Resubmit at the American Economic Journal: Economic Policy</div>
+        </div>
+        <div class="paper">
+            <div class="paper-title">5. The Global Gender Gap in STEM Applications: Pipeline vs. Choice</div>
+            <div class="paper-authors">with I. Ahimbisibwe, A. Altjmed, G. Artemov, A. Barrios-Fernández, A. Bizopoulou, M. Kaila, J. Liu, R. Megalokonomou, J. Montalbán, C. Neilson, J. Sun, and X. Ye</div>
+            <div class="paper-status">Revise &amp; Resubmit at the Economics of Education Review</div>
+        </div>
+        <div class="paper">
+            <div class="paper-title">6. Skin in the Game: College's Financial Incentives and Student Outcomes</div>
+            <div class="paper-authors">with <a href="https://hbaraho.github.io/">Nano Barahona</a>, Cauê Dobbin, Hanson Ho, and Constantine Yannelis</div>
+            <div class="paper-links"><a href="#">[ Media: WSJ ]</a></div>
+        </div>
+        <div class="paper">
+            <div class="paper-title">7. The Equilibrium Effects of Public Provision in Education Markets</div>
+            <div class="paper-authors">with Michael Dinerstein, Daniel Morales, and Christopher Neilson</div>
+        </div>
+        <div class="paper">
+            <div class="paper-title">8. A Horizon Scan of AI and Higher Education: Fourteen Issues That May Transform the Sector</div>
+            <div class="paper-authors">with SJ Beard, K. Roehrick, J. Beadle, G. Brinkworth, M. Compton, K. Crawford, M. Ennion, L. Gharavi, C. Gordon, V. Hillman, D. Madigan, A. Marcoci, A. Marwick, A. Nelson, M. Pittinsky, S. Walker, D. Wang, G. Zapata, M. Connelly</div>
+        </div>
+        <h2 style="margin-top: 2.5rem;">Work in Progress</h2>
+        <div class="paper">
+            <div class="paper-title">Equalizing the Great Equalizer: The Long-run Consequences of School Funding Reforms</div>
+            <div class="paper-authors">with Claire Montialoux and Roberto Hsu Rocha</div>
+        </div>
+        <div class="paper">
+            <div class="paper-title">Demand Shocks and Firm Dynamics: Evidence from Government Procurement Lotteries</div>
+            <div class="paper-authors">with Marvin Cardoza, Michael Dinerstein, and Christopher Neilson</div>
+        </div>
+    </div>
+</section>
+<footer>&copy; 2026 Sebastián Otero</footer>
+</body>
+</html>
