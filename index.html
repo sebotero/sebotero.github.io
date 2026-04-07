@@ -57,9 +57,10 @@
         .nav-inner {
             max-width: var(--max-width);
             margin: 0 auto;
-            display: flex;
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 3rem;
             align-items: center;
-            justify-content: space-between;
             height: 60px;
         }
 
@@ -143,7 +144,7 @@
         .section-inner {
             max-width: var(--max-width);
             margin: 0 auto;
-            padding: 0 2rem;
+            padding: 0;
         }
 
         .section h2 {
@@ -330,7 +331,7 @@
 
         <div class="paper">
             <div class="paper-title">
-                1. Equilibrium Effects of Food Labeling Policies
+                1. <a href="https://www.econometricsociety.org/publications/econometrica/2023/05/01/Equilibrium-Effects-of-Food-Labeling-Policies" target="_blank" rel="noopener">Equilibrium Effects of Food Labeling Policies</a>
             </div>
             <div class="paper-authors">with <a href="https://hbaraho.github.io/" target="_blank" rel="noopener">Nano Barahona</a> and <a href="https://sites.google.com/view/cristobalotero" target="_blank" rel="noopener">Cristóbal Otero</a></div>
             <div class="paper-journal"><em>Econometrica</em>, 91(3), May 2023, 839-868</div>
@@ -348,7 +349,7 @@
 
         <div class="paper">
             <div class="paper-title">
-                2. The Effects of Drinking and Driving Laws on Car Crashes, Injuries, and Deaths: Evidence from Chile
+                2. <a href="https://www.sciencedirect.com/science/article/pii/S000145751730194X" target="_blank" rel="noopener">The Effects of Drinking and Driving Laws on Car Crashes, Injuries, and Deaths: Evidence from Chile</a>
             </div>
             <div class="paper-authors">with <a href="https://sites.google.com/site/tomasraubinder" target="_blank" rel="noopener">Tomás Rau</a></div>
             <div class="paper-journal"><em>Accident Analysis and Prevention</em>, 106, September 2017, 262-274</div>
@@ -427,7 +428,7 @@
             <div class="paper-title">
                 5. The Global Gender Gap in STEM Applications: Pipeline vs. Choice
             </div>
-            <div class="paper-authors">with I. Ahimbisibwe, A. Altjmed, G. Artemov, A. Barrios-Fernández, A. Bizopoulou, M. Kaila, J. Liu, R. Megalokonomou, J. Montalbán, <a href="https://christopherneilson.github.io/" target="_blank" rel="noopener">C. Neilson</a>, J. Sun, and X. Ye</div>
+            <div class="paper-authors">with <a href="https://iahimbis.github.io/" target="_blank" rel="noopener">I. Ahimbisibwe</a>, <a href="https://adamaltmejd.se/" target="_blank" rel="noopener">A. Altmejd</a>, <a href="https://fbe.unimelb.edu.au/our-people/staff/economics/georgy-artemov" target="_blank" rel="noopener">G. Artemov</a>, <a href="https://andresbarriosf.github.io/" target="_blank" rel="noopener">A. Barrios-Fernández</a>, <a href="https://sites.google.com/site/aspasiabizopoulou/home" target="_blank" rel="noopener">A. Bizopoulou</a>, <a href="https://marttikaila.com/" target="_blank" rel="noopener">M. Kaila</a>, <a href="http://homepage.ntu.edu.tw/~liujt/" target="_blank" rel="noopener">J. Liu</a>, <a href="http://www.rmegalokonomou.net/" target="_blank" rel="noopener">R. Megalokonomou</a>, <a href="https://sites.google.com/site/josemontalbancastilla/" target="_blank" rel="noopener">J. Montalbán</a>, <a href="https://christopherneilson.github.io/" target="_blank" rel="noopener">C. Neilson</a>, <a href="https://sites.google.com/view/jintaosun" target="_blank" rel="noopener">J. Sun</a>, and <a href="https://xiaoyangye.github.io/" target="_blank" rel="noopener">X. Ye</a></div>
             <div class="paper-status">Revise &amp; Resubmit at the <strong><em>Economics of Education Review</em></strong></div>
             <div class="paper-links">
                 <button class="abstract-toggle" onclick="toggleAbstract(this)">[ Abstract ]</button>
@@ -440,11 +441,11 @@
             <div class="paper-title">
                 6. Skin in the Game: College's Financial Incentives and Student Outcomes
             </div>
-            <div class="paper-authors">with <a href="https://hbaraho.github.io/" target="_blank" rel="noopener">Nano Barahona</a>, <a href="https://cauedobbin.com/" target="_blank" rel="noopener">Cauê Dobbin</a>, Hanson Ho, and <a href="https://www.yannelis.com" target="_blank" rel="noopener">Constantine Yannelis</a></div>
+            <div class="paper-authors">with <a href="https://hbaraho.github.io/" target="_blank" rel="noopener">Nano Barahona</a>, <a href="https://cauedobbin.com/" target="_blank" rel="noopener">Cauê Dobbin</a>, <a href="https://www.gsb.stanford.edu/programs/phd/academic-experience/students/hanson-ho" target="_blank" rel="noopener">Hanson Ho</a>, and <a href="https://www.yannelis.com" target="_blank" rel="noopener">Constantine Yannelis</a></div>
             <div class="paper-links">
                 <button class="abstract-toggle" onclick="toggleAbstract(this)">[ Abstract ]</button>
                 <a href="https://sebotero.github.io/papers/skiningame_postedversion.pdf" target="_blank" rel="noopener">[ Paper ]</a>
-                <a href="#" target="_blank" rel="noopener">[ Media: WSJ ]</a>
+                <a href="https://www.wsj.com/us-news/education/student-college-loan-changes-53d489c5?st=Gd1mn5&reflink=desktopwebshare_permalink" target="_blank" rel="noopener">[ Media: WSJ ]</a>
             </div>
             <div class="abstract-content">This paper studies how schools respond to financial incentives. Governments can penalize institutions with high dropout or loan default rates, and these institutions can respond by increasing quality or changing the selection of students. We study the predictions of the model using a 2017 reform in Brazil, which made schools pay a fee for students receiving federal student loans that dropped out or defaulted. Consistent with the predictions of the model, we find that schools more reliant on government aid reduced dropout rates, primarily by increasing quality. We build an equilibrium model to illustrate the trade-off faced by policymakers, and use our estimates to study optimal policy. We find that schools should pay for approximately half of all dollars charged off in default.</div>
         </div>
@@ -453,7 +454,7 @@
             <div class="paper-title">
                 7. The Equilibrium Effects of Public Provision in Education Markets
             </div>
-            <div class="paper-authors">with <a href="https://sites.google.com/site/michaeldinerstein/" target="_blank" rel="noopener">Michael Dinerstein</a>, Daniel Morales, and <a href="https://christopherneilson.github.io/" target="_blank" rel="noopener">Christopher Neilson</a></div>
+            <div class="paper-authors">with <a href="https://sites.google.com/site/michaeldinerstein/" target="_blank" rel="noopener">Michael Dinerstein</a>, <a href="https://mx.linkedin.com/in/daniel-r-morales-phd-60419720" target="_blank" rel="noopener">Daniel Morales</a>, and <a href="https://christopherneilson.github.io/" target="_blank" rel="noopener">Christopher Neilson</a></div>
             <div class="paper-links">
                 <button class="abstract-toggle" onclick="toggleAbstract(this)">[ Abstract ]</button>
                 <a href="https://sebotero.github.io/papers/DNO_draft.pdf" target="_blank" rel="noopener">[ Paper ]</a>
@@ -463,12 +464,12 @@
 
         <div class="paper">
             <div class="paper-title">
-                8. A Horizon Scan of AI and Higher Education: Fourteen Issues That May Transform the Sector
+                8. <a href="https://sebotero.github.io/papers/ssrn-6257318.pdf" target="_blank" rel="noopener">A Horizon Scan of AI and Higher Education: Fourteen Issues That May Transform the Sector</a>
             </div>
-            <div class="paper-authors">with SJ Beard, K. Roehrick, J. Beadle, G. Brinkworth, M. Compton, K. Crawford, M. Ennion, L. Gharavi, C. Gordon, V. Hillman, D. Madigan, A. Marcoci, A. Marwick, A. Nelson, M. Pittinsky, S. Walker, D. Wang, G. Zapata, M. Connelly</div>
+            <div class="paper-authors">with <a href="https://www.sjbeard.com/" target="_blank" rel="noopener">SJ Beard</a>, K. Roehrick, J. Beadle, G. Brinkworth, M. Compton, <a href="https://katecrawford.net/" target="_blank" rel="noopener">K. Crawford</a>, M. Ennion, <a href="http://www.lancegharavi.com/" target="_blank" rel="noopener">L. Gharavi</a>, C. Gordon, V. Hillman, <a href="http://www.stat.columbia.edu/~madigan/" target="_blank" rel="noopener">D. Madigan</a>, <a href="http://alexandrumarcoci.com/" target="_blank" rel="noopener">A. Marcoci</a>, <a href="https://tiara.org/" target="_blank" rel="noopener">A. Marwick</a>, <a href="https://www.ias.edu/sss/faculty/nelson" target="_blank" rel="noopener">A. Nelson</a>, M. Pittinsky, S. Walker, <a href="https://business.columbia.edu/faculty/people/dan-wang" target="_blank" rel="noopener">D. Wang</a>, G. Zapata, <a href="https://www.matthewconnelly.net/" target="_blank" rel="noopener">M. Connelly</a></div>
             <div class="paper-links">
                 <button class="abstract-toggle" onclick="toggleAbstract(this)">[ Abstract ]</button>
-                <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6257318" target="_blank" rel="noopener">[ Paper ]</a>
+                <a href="https://sebotero.github.io/papers/ssrn-6257318.pdf" target="_blank" rel="noopener">[ Paper ]</a>
             </div>
             <div class="abstract-content">AI, and especially Generative AI, are profoundly affecting higher education, challenging longstanding philosophical, pedagogical, cultural, and economic assumptions and reshaping its core practices. Much current research is trying to understand and assess these impacts; however, future trends and developments could be even more disruptive for both faculty and students. This paper provides a longer-term perspective in the form of a horizon scan, using the IDEA protocol with a group of 27 education and AI experts from the UK and USA to identify and evaluate future issues that may significantly impact the sector but have yet to reach prominence in discussions within the sector. It identifies 14 issues (from an initial longlist of 72) with the highest potential impact over both the near-term (such as data privacy, shadow curricula, and personalized education) and the longer-term (such as AI learning companions, the dematerialization of universities, and the need to prepare for existential risk). It also identifies important cross-cutting themes that arise from these issues: reflecting on the real value of education, understanding social aspects of learning, and the social and political context of AI deployment. The paper seeks to support educators in moving from a reactive approach to handling AI impacts towards a more proactive approach of planning for possible future social and technological transitions and providing students with the skills and resources needed to navigate them.</div>
         </div>
@@ -486,13 +487,23 @@
                 Equalizing the Great Equalizer: The Long-run Consequences of School Funding Reforms
             </div>
             <div class="paper-authors">with <a href="https://clairemontialoux.com/" target="_blank" rel="noopener">Claire Montialoux</a> and <a href="https://sites.google.com/view/robertohsurocha/" target="_blank" rel="noopener">Roberto Hsu Rocha</a></div>
+            <div class="paper-status">Slides and paper available upon request</div>
         </div>
 
         <div class="paper">
             <div class="paper-title">
                 Demand Shocks and Firm Dynamics: Evidence from Government Procurement Lotteries
             </div>
-            <div class="paper-authors">with Marvin Cardoza, <a href="https://sites.google.com/site/michaeldinerstein/" target="_blank" rel="noopener">Michael Dinerstein</a>, and <a href="https://christopherneilson.github.io/" target="_blank" rel="noopener">Christopher Neilson</a></div>
+            <div class="paper-authors">with <a href="https://do.linkedin.com/in/marvin-cardoza-3b92b474?trk=public_post_feed-actor-name" target="_blank" rel="noopener">Marvin Cardoza</a>, <a href="https://sites.google.com/site/michaeldinerstein/" target="_blank" rel="noopener">Michael Dinerstein</a>, and <a href="https://christopherneilson.github.io/" target="_blank" rel="noopener">Christopher Neilson</a></div>
+            <div class="paper-status">Slides available upon request</div>
+        </div>
+
+        <div class="paper">
+            <div class="paper-title">
+                Incentives, Information, and Reminders for Bureaucrats: Overcoming Barriers to the Scale Up of an Effective Policy
+            </div>
+            <div class="paper-authors">with <a href="https://www.patrickagte.com/" target="_blank" rel="noopener">Patrick Agte</a>, <a href="https://mx.linkedin.com/in/daniel-r-morales-phd-60419720" target="_blank" rel="noopener">Daniel Morales</a>, <a href="https://christopherneilson.github.io/" target="_blank" rel="noopener">Christopher Neilson</a>, and <a href="https://gautam-rao.com/" target="_blank" rel="noopener">Gautam Rao</a></div>
+            <div class="paper-status">Slides and paper available upon request</div>
         </div>
     </div>
 </section>
