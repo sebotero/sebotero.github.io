@@ -92,6 +92,8 @@
 
         .nav-links a:hover { text-decoration: underline; }
 
+        .mobile-only { display: none; }
+
         /* Mobile menu button */
         .menu-btn {
             display: none;
@@ -115,7 +117,7 @@
             display: grid;
             grid-template-columns: 1fr 1.2fr;
             gap: 3rem;
-            padding: 1.5rem 2rem;
+            padding: 0 2rem 1.5rem;
             align-items: start;
         }
 
@@ -266,6 +268,8 @@
         /* Responsive */
         @media (max-width: 768px) {
             .menu-btn { display: block; }
+            .desktop-only { display: none; }
+            .mobile-only { display: inline; }
             .nav-links {
                 display: none;
                 position: absolute;
@@ -326,7 +330,7 @@
 </nav>
 
 <!-- Hero -->
-<section class="section" id="home">
+<section class="section" id="home" style="padding-top: 1rem;">
     <div class="hero">
         <div class="hero-photo">
             <img src="images/seb_mila.jpeg" alt="Sebastián Otero">
@@ -336,7 +340,7 @@
                 I study how regulation reshapes markets. I build models of how firms and consumers respond to policy — combining causal inference and structural modeling to understand what happens when governments change the rules. My work mostly focuses on education and labor markets.
             </p>
             <p>
-                I'm an Assistant Professor of Economics at Columbia University. I am also a Faculty Research Fellow at NBER and a Research Affiliate at IZA. I completed my PhD at Stanford and spent a year as a postdoctoral researcher at UC Berkeley. You can reach me at <a href="mailto:so2699@columbia.edu">so2699@columbia.edu</a>.
+                I'm an Assistant Professor of Economics at Columbia University. I am also a Faculty Research Fellow at NBER and a Research Affiliate at IZA. I completed my PhD at Stanford<span class="desktop-only"> and spent a year as a postdoctoral researcher at UC Berkeley.</span><span class="mobile-only">.</span> You can reach me at <a href="mailto:so2699@columbia.edu">so2699@columbia.edu</a>.
             </p>
 
             <div class="social-links">
