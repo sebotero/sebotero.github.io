@@ -91,6 +91,22 @@
 
         .nav-links a:hover { text-decoration: underline; }
 
+        /* Mobile menu button */
+        .menu-btn {
+            display: none;
+            background: none;
+            border: 2px solid var(--blue);
+            color: var(--blue);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-size: 0.85rem;
+            font-weight: 500;
+            padding: 0.35rem 0.9rem;
+            border-radius: 4px;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+        }
+
         /* Hero / About */
         .hero {
             max-width: var(--max-width);
@@ -248,6 +264,21 @@
 
         /* Responsive */
         @media (max-width: 768px) {
+            .menu-btn { display: block; }
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 60px;
+                right: 2rem;
+                background: var(--bg);
+                border: 1px solid var(--border);
+                border-radius: 4px;
+                box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+                flex-direction: column;
+                padding: 0.8rem 1.2rem;
+                gap: 0.8rem;
+            }
+            .nav-links.open { display: flex; }
             .hero {
                 grid-template-columns: 1fr;
                 text-align: center;
@@ -256,7 +287,6 @@
             }
             .hero-photo img { max-width: 260px; margin: 0 auto; display: block; }
             .social-links { justify-content: center; }
-            .nav-links { gap: 1.2rem; font-size: 0.85rem; }
             .nav-name { font-size: 1.4rem; }
             .nav-name span { font-size: 1.1rem; }
             .section { padding: 2rem 1.5rem; }
@@ -267,8 +297,6 @@
         }
 
         @media (max-width: 480px) {
-            .nav-inner { flex-direction: column; height: auto; padding: 0.8rem 0; gap: 0.5rem; }
-            .nav-links { gap: 0.8rem; flex-wrap: wrap; justify-content: center; }
             .hero { padding: 1.5rem 1rem; gap: 1.5rem; }
             .hero-photo img { max-width: 220px; }
             .hero-text p { font-size: 0.95rem; }
@@ -286,6 +314,7 @@
 <nav>
     <div class="nav-inner">
         <a href="#" class="nav-name">Sebastián Otero<span>.</span></a>
+        <button class="menu-btn" onclick="document.querySelector('.nav-links').classList.toggle('open')">Menu</button>
         <div class="nav-links">
             <a href="#publications">Publications</a>
             <a href="#working-papers">Working Papers</a>
@@ -306,7 +335,7 @@
                 I study how regulation reshapes markets. I build models of how firms and consumers respond to policy — combining large-scale data, causal inference, and structural modeling to understand what happens when governments change the rules. My work mostly focuses on education and labor markets.
             </p>
             <p>
-                I'm an Assistant Professor of Economics at Columbia University. I am also a Faculty Research Fellow at NBER and a Research Affiliate at IZA. I completed my PhD at Stanford and spent a year as a postdoctoral researcher at UC Berkeley. You can reach me at <a href="mailto:so2699@columbia.edu">so2699@columbia.edu</a>.
+                I'm an Assistant Professor of Economics at Columbia University. I am also a Faculty Research Fellow at NBER and a Research Affiliate at IZA. I completed my PhD at Stanford and spent a year as a postdoctoral researcher at UC Berkeley. You can reach me at <a href="mailto:so2699@columbia.edu">so2699@columbia.edu</a>. My CV is <a href="cv/cv_sebastian_otero.pdf" target="_blank" rel="noopener">here</a>.
             </p>
 
             <div class="social-links">
@@ -518,6 +547,11 @@ function toggleAbstract(btn) {
     var content = btn.closest('.paper').querySelector('.abstract-content');
     content.classList.toggle('show');
 }
+document.querySelectorAll('.nav-links a').forEach(function(link) {
+    link.addEventListener('click', function() {
+        document.querySelector('.nav-links').classList.remove('open');
+    });
+});
 </script>
 
 </body>
