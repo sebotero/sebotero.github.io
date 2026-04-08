@@ -100,7 +100,7 @@
             background: none;
             border: none;
             color: var(--text);
-            padding: 0.35rem;
+            padding: 0;
             cursor: pointer;
             letter-spacing: 0.03em;
         }
@@ -263,6 +263,8 @@
         /* Responsive */
         @media (max-width: 768px) {
             .menu-btn { display: block; }
+            nav { padding: 0 1.5rem; }
+            .nav-inner { display: flex; justify-content: space-between; gap: 0; }
             #home { padding-top: 0.5rem !important; }
             .desktop-only { display: none; }
             .mobile-only { display: inline; }
@@ -270,7 +272,7 @@
                 display: none;
                 position: absolute;
                 top: 60px;
-                left: 2rem;
+                left: 1.5rem;
                 background: var(--bg);
                 border: 1px solid var(--border);
                 border-radius: 4px;
