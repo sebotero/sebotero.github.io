@@ -98,15 +98,10 @@
         .menu-btn {
             display: none;
             background: none;
-            border: 2px solid var(--blue);
-            color: var(--blue);
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            font-size: 0.85rem;
-            font-weight: 500;
-            padding: 0.35rem 0.9rem;
-            border-radius: 4px;
+            border: none;
+            color: var(--text);
+            padding: 0.35rem;
             cursor: pointer;
-            text-transform: uppercase;
             letter-spacing: 0.03em;
         }
 
@@ -320,7 +315,9 @@
 <nav>
     <div class="nav-inner">
         <a href="#" class="nav-name">Sebastián Otero<span>.</span></a>
-        <button class="menu-btn" onclick="document.querySelector('.nav-links').classList.toggle('open')">Menu</button>
+        <button class="menu-btn" onclick="document.querySelector('.nav-links').classList.toggle('open')">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
         <div class="nav-links">
             <a href="#publications">Publications</a>
             <a href="#working-papers">Working Papers</a>
