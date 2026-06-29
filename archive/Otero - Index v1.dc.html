@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Spline+Sans+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{background:#f4f5f3;}
+  ::selection{background:#cfe0f7;}
+  a{color:inherit;text-decoration:none;}
+  @media(max-width:900px){.idx-shell{grid-template-columns:1fr!important;}.idx-aside{position:static!important;height:auto!important;border-right:none!important;border-bottom:1px solid #e3e4e0;padding:30px 26px!important;}.idx-photo{max-width:150px;border-radius:8px!important;}.idx-aside nav{display:grid!important;grid-template-columns:1fr 1fr;gap:0 22px!important;}.idx-contact{margin-top:6px!important;}.idx-row{grid-template-columns:64px 1fr!important;gap:16px!important;}}
+  @media(max-width:520px){.idx-row{grid-template-columns:1fr!important;}.idx-rowmeta{flex-direction:row!important;gap:12px!important;align-items:baseline;}}
+</style>
+</helmet>
+<div class="idx-shell" style="font-family:'Archivo',system-ui,sans-serif;color:#19191c;background:#f4f5f3;display:grid;grid-template-columns:328px 1fr;min-height:100vh;-webkit-font-smoothing:antialiased;">
+
+  <!-- Sidebar -->
+  <aside class="idx-aside" style="position:sticky;top:0;height:100vh;overflow-y:auto;background:#fff;border-right:1px solid #e3e4e0;padding:40px 34px;display:flex;flex-direction:column;gap:26px;">
+    <div>
+      <div style="font-family:'Spline Sans Mono',monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#2f5fb0;margin-bottom:14px;">Economist</div>
+      <h1 style="font-size:30px;font-weight:800;letter-spacing:-0.02em;line-height:1.05;margin-bottom:14px;">Sebastián<br>Otero</h1>
+      <p style="font-size:14.5px;line-height:1.5;color:#55555c;">Assistant Professor of Economics, <span style="color:#19191c;font-weight:600;">Columbia University.</span> Faculty Research Fellow at NBER.</p>
+    </div>
+
+    <div class="idx-photo" style="border-radius:8px;overflow:hidden;border:1px solid #e3e4e0;">
+      <img src="images/sebastian-otero-800.jpeg" alt="Sebastián Otero" style="width:100%;display:block;">
+    </div>
+
+    <nav style="display:flex;flex-direction:column;gap:1px;font-family:'Spline Sans Mono',monospace;font-size:12.5px;letter-spacing:0.02em;">
+      <a href="#publications" style="display:flex;justify-content:space-between;padding:9px 0;border-bottom:1px solid #ededeb;color:#33333a;" style-hover="color:#2f5fb0;"><span>Publications</span><span style="color:#b6b6bc;">02</span></a>
+      <a href="#working-papers" style="display:flex;justify-content:space-between;padding:9px 0;border-bottom:1px solid #ededeb;color:#33333a;" style-hover="color:#2f5fb0;"><span>Working Papers</span><span style="color:#b6b6bc;">08</span></a>
+      <a href="#in-progress" style="display:flex;justify-content:space-between;padding:9px 0;border-bottom:1px solid #ededeb;color:#33333a;" style-hover="color:#2f5fb0;"><span>In Progress</span><span style="color:#b6b6bc;">02</span></a>
+      <a href="#other-writing" style="display:flex;justify-content:space-between;padding:9px 0;border-bottom:1px solid #ededeb;color:#33333a;" style-hover="color:#2f5fb0;"><span>Other Writing</span><span style="color:#b6b6bc;">01</span></a>
+    </nav>
+
+    <div class="idx-contact" style="margin-top:auto;display:flex;flex-direction:column;gap:9px;font-family:'Spline Sans Mono',monospace;font-size:12px;">
+      <a href="mailto:so2699@columbia.edu" style="color:#2f5fb0;" style-hover="text-decoration:underline;">so2699@columbia.edu</a>
+      <div style="display:flex;gap:14px;color:#8a8a90;">
+        <a href="https://sebotero.github.io/cv/cv_sebastian_otero.pdf" style="color:#33333a;" style-hover="color:#2f5fb0;">CV ↗</a>
+        <a href="https://scholar.google.com/citations?user=qGak9VMAAAAJ&hl=en" target="_blank" rel="noopener" style="color:#33333a;" style-hover="color:#2f5fb0;">Scholar ↗</a>
+        <a href="https://www.linkedin.com/in/sebotero/" target="_blank" rel="noopener" style="color:#33333a;" style-hover="color:#2f5fb0;">LinkedIn ↗</a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Content -->
+  <main style="padding:56px clamp(28px,4.5vw,72px) 80px;max-width:980px;">
+
+    <section style="margin-bottom:64px;">
+      <p style="font-size:clamp(24px,3vw,34px);line-height:1.34;font-weight:500;letter-spacing:-0.01em;max-width:24ch;">I study how regulation reshapes markets — building models of how firms and consumers respond to policy to understand what happens when governments <span style="color:#2f5fb0;">change the rules.</span></p>
+      <p style="font-size:16px;line-height:1.62;color:#55555c;max-width:62ch;margin-top:22px;">I completed my PhD at Stanford and spent a year as a postdoctoral researcher at UC Berkeley. My work mostly focuses on education and labor markets, combining causal inference and structural modeling.</p>
+    </section>
+
+    <sc-for list="{{ sections }}" as="s" hint-placeholder-count="3">
+      <section id="{{ s.id }}" style="margin-bottom:58px;">
+        <div style="display:flex;align-items:baseline;gap:14px;border-bottom:2px solid #19191c;padding-bottom:12px;margin-bottom:6px;">
+          <span style="font-family:'Spline Sans Mono',monospace;font-size:13px;color:#2f5fb0;font-weight:500;">{{ s.idxnum }}</span>
+          <h2 style="font-size:15px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;">{{ s.label }}</h2>
+        </div>
+
+        <sc-for list="{{ s.groups }}" as="g" hint-placeholder-count="1">
+          <sc-if value="{{ g.hasSub }}" hint-placeholder-val="{{ false }}">
+            <div style="font-family:'Spline Sans Mono',monospace;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#9a9aa0;margin:26px 0 4px;">{{ g.sub }}</div>
+          </sc-if>
+          <sc-for list="{{ g.papers }}" as="p" hint-placeholder-count="3">
+            <article class="idx-row" style="display:grid;grid-template-columns:84px 1fr;gap:20px;padding:22px 0;border-bottom:1px solid #e3e4e0;">
+              <div class="idx-rowmeta" style="display:flex;flex-direction:column;gap:6px;font-family:'Spline Sans Mono',monospace;">
+                <span style="font-size:13px;color:#2f5fb0;font-weight:500;font-variant-numeric:tabular-nums;">{{ p.numLabel }}</span>
+                <span style="font-size:11.5px;color:#9a9aa0;letter-spacing:0.02em;">{{ p.year }}</span>
+              </div>
+              <div style="min-width:0;">
+                <h3 style="font-size:18.5px;line-height:1.32;font-weight:600;letter-spacing:-0.01em;margin-bottom:6px;">
+                  <sc-if value="{{ p.hasTitleLink }}" hint-placeholder-val="{{ false }}"><a href="{{ p.url }}" target="_blank" rel="noopener" style="border-bottom:1px solid #d4d4d8;" style-hover="color:#2f5fb0;border-bottom-color:#2f5fb0;">{{ p.title }}</a></sc-if>
+                  <sc-if value="{{ p.noTitleLink }}" hint-placeholder-val="{{ true }}">{{ p.title }}</sc-if>
+                </h3>
+                <sc-if value="{{ p.hasAuthors }}" hint-placeholder-val="{{ true }}">
+                  <div style="font-size:14px;color:#6a6a70;margin-bottom:3px;">with <sc-for list="{{ p.authors }}" as="a"><sc-if value="{{ a.isLink }}" hint-placeholder-val="{{ true }}"><a href="{{ a.url }}" target="_blank" rel="noopener" style="color:#3a3a40;border-bottom:1px solid #dcdce0;" style-hover="color:#2f5fb0;border-bottom-color:#2f5fb0;">{{ a.name }}</a></sc-if><sc-if value="{{ a.isText }}" hint-placeholder-val="{{ false }}"><span>{{ a.name }}</span></sc-if>{{ a.sep }}</sc-for></div>
+                </sc-if>
+                <sc-if value="{{ p.hasJournal }}" hint-placeholder-val="{{ false }}">
+                  <div style="font-size:14.5px;color:#33333a;"><span style="font-weight:600;font-style:italic;">{{ p.journal.name }}</span>{{ p.journal.rest }}</div>
+                </sc-if>
+                <sc-if value="{{ p.hasStatus }}" hint-placeholder-val="{{ false }}">
+                  <div style="font-size:13.5px;color:#7a7a80;font-family:'Spline Sans Mono',monospace;margin-top:2px;">{{ p.statusText }}<sc-if value="{{ p.hasStatusJournal }}" hint-placeholder-val="{{ false }}"><span style="color:#2f5fb0;font-weight:500;">{{ p.statusJournal }}</span></sc-if><sc-if value="{{ p.hasStatusAward }}" hint-placeholder-val="{{ false }}"><span style="font-style:italic;">{{ p.statusAward }}</span></sc-if></div>
+                </sc-if>
+                <sc-if value="{{ p.hasNote }}" hint-placeholder-val="{{ false }}">
+                  <div style="font-size:13.5px;color:#7a7a80;font-family:'Spline Sans Mono',monospace;">{{ p.note }}</div>
+                </sc-if>
+                <sc-if value="{{ p.hasLinks }}" hint-placeholder-val="{{ true }}">
+                  <div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:11px;font-family:'Spline Sans Mono',monospace;font-size:11.5px;">
+                    <sc-if value="{{ p.hasAbstract }}" hint-placeholder-val="{{ true }}">
+                      <button onClick="{{ p.toggle }}" style="cursor:pointer;background:#19191c;border:1px solid #19191c;color:#fff;padding:5px 11px;border-radius:4px;font:inherit;" style-hover="background:#2f5fb0;border-color:#2f5fb0;">{{ p.toggleLabel }}</button>
+                    </sc-if>
+                    <sc-for list="{{ p.links }}" as="l"><a href="{{ l.url }}" target="_blank" rel="noopener" style="padding:5px 11px;border-radius:4px;border:1px solid #d4d4d8;color:#55555c;" style-hover="border-color:#2f5fb0;color:#2f5fb0;">{{ l.label }}</a></sc-for>
+                  </div>
+                </sc-if>
+                <sc-if value="{{ p.open }}" hint-placeholder-val="{{ false }}">
+                  <p style="margin-top:13px;padding:15px 18px;background:#fff;border:1px solid #e3e4e0;border-radius:7px;font-size:14.5px;line-height:1.62;color:#3a3a40;">{{ p.abstract }}</p>
+                </sc-if>
+              </div>
+            </article>
+          </sc-for>
+        </sc-for>
+      </section>
+    </sc-for>
+
+    <footer style="font-family:'Spline Sans Mono',monospace;font-size:11.5px;color:#9a9aa0;letter-spacing:0.04em;padding-top:14px;border-top:1px solid #e3e4e0;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;">
+      <span>© 2026 Sebastián Otero</span>
+      <span>New York, NY</span>
+    </footer>
+  </main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1180,&quot;height&quot;:900}}">
+class Component extends DCLogic {
+  state = { sections: [], openIds: {} };
+
+  componentDidMount() {
+    import('./papers.js').then((m) => {
+      this.setState({ sections: m.buildSections() });
+    });
+  }
+
+  toggle(id) {
+    this.setState((s) => ({ openIds: { ...s.openIds, [id]: !s.openIds[id] } }));
+  }
+
+  renderVals() {
+    const open = this.state.openIds;
+    const sections = (this.state.sections || []).map((s, si) => ({
+      ...s,
+      idxnum: String(si + 1).padStart(2, '0'),
+      groups: s.groups.map((g) => ({
+        ...g,
+        hasSub: !!g.sub,
+        papers: g.papers.map((p) => ({
+          ...p,
+          noTitleLink: !p.hasTitleLink,
+          numLabel: p.showNum ? String(p.num).padStart(2, '0') : '—',
+          open: !!open[p.id],
+          toggleLabel: open[p.id] ? 'Hide' : 'Abstract',
+          toggle: () => this.toggle(p.id),
+        })),
+      })),
+    }));
+    return { sections };
+  }
+}
+</script>
+</body>
+</html>

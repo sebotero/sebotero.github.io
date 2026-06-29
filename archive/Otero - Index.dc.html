@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>Sebastián Otero</title>
+<link rel="icon" type="image/png" href="images/favicon.png">
+<link rel="apple-touch-icon" href="images/webclip.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script type="module" src="papers.js"></script>
+<style>
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{background:#faf7f1;}
+  :root{--accent:#2f5fb0;}
+  ::selection{background:#ece2cf;}
+  a{color:inherit;text-decoration:none;}
+  .m-link{transition:color .15s ease;color:#9a978f;}
+  .m-link:hover{color:var(--accent,#2f5fb0);}
+  .m-nav{transition:color .15s ease;}
+  .m-copy{color:#1a1a1c;transition:color .15s ease;}
+  .m-copy:hover{color:var(--accent,#2f5fb0);}
+  .m-abs-inner{transition:opacity .3s ease;}
+  .skip-link{position:absolute;left:-9999px;top:0;z-index:200;background:var(--accent,#2f5fb0);color:#fff;padding:9px 16px;border-radius:0 0 7px 0;font-size:13px;font-weight:500;}
+  .skip-link:focus{left:0;}
+  .print-header{display:none;}
+  [data-density="compact"] .m-row{padding-top:16px!important;padding-bottom:16px!important;}
+  [data-density="compact"] .m-statement{font-size:22px!important;}
+  [data-density="compact"] section[id]{margin-bottom:46px!important;}
+  @media(max-width:900px){.m-shell{display:block!important;}.m-topbar{display:flex!important;}.m-aside{display:none!important;}.m-intro{display:none!important;}.m-mhero{display:block!important;}.m-main{padding:26px 26px 70px!important;max-width:none!important;}section[id]{scroll-margin-top:74px!important;margin-bottom:38px!important;}}
+  @media(min-width:901px){.m-topbar,.m-mobmenu,.m-scrim{display:none!important;}}
+  @media print{
+    body{background:#fff;}
+    .m-aside,.skip-link,.m-links,.m-abs{display:none!important;}
+    .m-shell{display:block!important;}
+    .m-main{max-width:none!important;padding:0 !important;}
+    .print-header{display:block!important;margin-bottom:22px;padding-bottom:14px;border-bottom:1.5px solid #000;}
+    a{color:#000!important;border:none!important;}
+    section[id]{margin-bottom:16px!important;page-break-inside:auto;}
+    .m-row{padding:9px 0!important;page-break-inside:avoid;border-bottom:none!important;}
+    h2{color:#000!important;margin-top:14px;}
+  }
+</style>
+</helmet>
+<div id="m-root" class="m-shell" data-density="comfortable" style="--accent:#2f5fb0;font-family:'Archivo',system-ui,sans-serif;color:#1a1a1c;background:#faf7f1;display:grid;grid-template-columns:300px 1fr;min-height:100vh;-webkit-font-smoothing:antialiased;">
+
+  <a href="#maincontent" class="skip-link">Skip to content</a>
+
+  <!-- Mobile top bar -->
+  <header class="m-topbar" style="display:none;position:sticky;top:0;z-index:60;background:rgba(250,247,241,0.92);backdrop-filter:saturate(140%) blur(8px);border-bottom:1px solid #ece6d9;height:58px;padding:0 22px;align-items:center;justify-content:space-between;grid-column:1/-1;">
+    <a href="#maincontent" style="font-size:18px;font-weight:600;letter-spacing:-0.015em;color:#1a1a1c;">Sebastián Otero</a>
+    <button onClick="{{ toggleMenu }}" aria-label="Menu" aria-expanded="{{ menuAria }}" style="background:none;border:none;padding:10px;margin-right:-10px;cursor:pointer;display:flex;flex-direction:column;gap:5px;">
+      <span style="display:block;width:22px;height:2px;background:#1a1a1c;border-radius:2px;transition:transform .25s ease;transform:{{ line1 }};"></span>
+      <span style="display:block;width:22px;height:2px;background:#1a1a1c;border-radius:2px;transition:opacity .18s ease;opacity:{{ line2op }};"></span>
+      <span style="display:block;width:22px;height:2px;background:#1a1a1c;border-radius:2px;transition:transform .25s ease;transform:{{ line3 }};"></span>
+    </button>
+  </header>
+  <div class="m-scrim" onClick="{{ closeMenu }}" aria-hidden="true" style="position:fixed;inset:0;z-index:58;background:rgba(24,21,16,0.22);opacity:{{ menuOpacity }};pointer-events:{{ menuPointer }};transition:opacity .25s ease;"></div>
+  <nav class="m-mobmenu" aria-label="Sections" style="position:fixed;top:64px;right:14px;left:auto;z-index:59;width:min(300px,78vw);background:#fffdf9;border:1px solid #efe9dd;border-radius:18px;box-shadow:0 24px 50px -18px rgba(40,34,24,0.42);padding:10px;transform-origin:top right;opacity:{{ menuOpacity }};transform:{{ menuTransform }};pointer-events:{{ menuPointer }};transition:opacity .22s ease,transform .26s cubic-bezier(.2,.8,.2,1);">
+    <sc-for list="{{ navItems }}" as="n" hint-placeholder-count="4">
+      <a href="{{ n.href }}" onClick="{{ closeMenu }}" style="display:block;padding:13px 14px;border-radius:11px;font-size:16.5px;font-weight:500;color:var(--accent,#2f5fb0);transition:background .15s ease;" style-hover="background:#f3efe6;">{{ n.label }}</a>
+    </sc-for>
+    <a href="https://sebotero.github.io/cv/cv_sebastian_otero.pdf" onClick="{{ closeMenu }}" target="_blank" rel="noopener" style="display:block;padding:13px 14px;border-radius:11px;font-size:16.5px;font-weight:500;color:var(--accent,#2f5fb0);transition:background .15s ease;" style-hover="background:#f3efe6;">CV ↗</a>
+  </nav>
+
+  <!-- Sidebar -->
+  <aside class="m-aside" style="position:sticky;top:0;height:100vh;overflow-y:auto;background:#f6f2ea;border-right:1px solid #ece6d9;padding:48px 38px;display:flex;flex-direction:column;gap:30px;">
+    <div>
+      <h1 class="m-aside-name" style="font-size:25px;font-weight:600;letter-spacing:-0.02em;line-height:1.1;margin-bottom:11px;">Sebastián Otero</h1>
+      <p style="font-size:14px;line-height:1.5;color:#1a1a1c;font-weight:500;">Assistant Professor of Economics<br><span style="color:#86837c;font-weight:400;">Columbia University</span></p>
+      <div style="margin-top:13px;padding-top:13px;border-top:1px solid #e6dfd0;display:flex;flex-direction:column;gap:5px;font-size:13px;line-height:1.4;color:#86837c;">
+        <div>Faculty Research Fellow, <span style="color:#42403a;">NBER</span></div>
+        <div>Research Affiliate, <span style="color:#42403a;">IZA</span></div>
+      </div>
+    </div>
+
+    <div class="m-photo" style="border-radius:7px;overflow:hidden;">
+      <img src="images/seb_mila.jpeg" alt="Sebastián Otero" style="width:100%;display:block;">
+    </div>
+
+    <nav class="m-aside-nav" aria-label="Sections" style="display:flex;flex-direction:column;gap:11px;font-size:14px;">
+      <sc-for list="{{ navItems }}" as="n" hint-placeholder-count="4">
+        <a href="{{ n.href }}" class="m-nav" aria-current="{{ n.current }}" style="color:{{ n.color }};font-weight:{{ n.weight }};align-self:flex-start;" style-hover="color:var(--accent,#2f5fb0);"><span style="border-bottom:1.5px solid {{ n.tick }};padding-bottom:2px;transition:border-color .2s ease;">{{ n.label }}</span></a>
+      </sc-for>
+    </nav>
+
+    <div style="margin-top:auto;display:flex;flex-direction:column;gap:8px;font-size:13px;color:#86837c;">
+      <button onClick="{{ copyEmail }}" class="m-copy" title="Click to copy" style="background:none;border:none;padding:0;font:inherit;cursor:pointer;text-align:left;color:{{ emailColor }};">{{ emailLabel }}</button>
+      <div style="display:flex;gap:16px;">
+        <a href="https://sebotero.github.io/cv/cv_sebastian_otero.pdf" style-hover="color:var(--accent,#2f5fb0);">CV</a>
+        <a href="https://scholar.google.com/citations?user=qGak9VMAAAAJ&hl=en" target="_blank" rel="noopener" style-hover="color:var(--accent,#2f5fb0);">Scholar</a>
+        <a href="https://www.linkedin.com/in/sebotero/" target="_blank" rel="noopener" style-hover="color:var(--accent,#2f5fb0);">LinkedIn</a>
+      </div>
+      <div style="font-size:12px;color:#b3afa4;margin-top:4px;">Updated {{ updated }}</div>
+    </div>
+  </aside>
+
+  <!-- Content -->
+  <main id="maincontent" class="m-main" style="padding:64px clamp(28px,5vw,84px) 96px;max-width:880px;">
+
+    <!-- Mobile-only hero (distinct compact layout for small screens) -->
+    <div class="m-mhero" style="display:none;margin-bottom:34px;">
+      <img src="images/seb_mila.jpeg" alt="Sebastián Otero" style="width:62px;height:62px;border-radius:50%;object-fit:cover;object-position:50% 30%;display:block;margin-bottom:18px;">
+      <p style="font-size:15.5px;font-weight:600;color:#1a1a1c;line-height:1.42;">Assistant Professor of Economics<span style="display:block;font-weight:400;color:#86837c;">Columbia University</span></p>
+      <p style="font-size:12.5px;color:#a8a499;margin-top:9px;letter-spacing:0.04em;">NBER · IZA · PhD, STANFORD</p>
+      <p style="font-size:18.5px;line-height:1.5;color:#33312b;margin-top:19px;">I study how regulation reshapes markets — what happens when governments <span style="color:var(--accent,#2f5fb0);">change the rules.</span></p>
+      <button onClick="{{ copyEmail }}" class="m-copy" title="Tap to copy" style="background:none;border:none;padding:0;font:inherit;cursor:pointer;display:block;margin-top:21px;font-size:15.5px;font-weight:500;color:{{ emailColor }};">{{ emailLabel }}</button>
+      <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:14px;">
+        <a href="https://sebotero.github.io/cv/cv_sebastian_otero.pdf" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;padding:10px 16px;border:1px solid #ddd6c8;border-radius:999px;font-size:13px;color:#42403a;" style-hover="border-color:var(--accent,#2f5fb0);color:var(--accent,#2f5fb0);">CV</a>
+        <a href="https://scholar.google.com/citations?user=qGak9VMAAAAJ&hl=en" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;padding:10px 16px;border:1px solid #ddd6c8;border-radius:999px;font-size:13px;color:#42403a;" style-hover="border-color:var(--accent,#2f5fb0);color:var(--accent,#2f5fb0);">Scholar</a>
+        <a href="https://www.linkedin.com/in/sebotero/" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;padding:10px 16px;border:1px solid #ddd6c8;border-radius:999px;font-size:13px;color:#42403a;" style-hover="border-color:var(--accent,#2f5fb0);color:var(--accent,#2f5fb0);">LinkedIn</a>
+      </div>
+    </div>
+
+    <div class="print-header">
+      <div style="font-size:22px;font-weight:700;">Sebastián Otero</div>
+      <div style="font-size:13px;color:#000;margin-top:2px;">Assistant Professor of Economics, Columbia University · so2699@columbia.edu · sebotero.github.io</div>
+    </div>
+
+    <section class="m-intro" style="margin-bottom:64px;max-width:60ch;">
+      <p class="m-statement" style="font-size:clamp(22px,2.6vw,29px);line-height:1.4;font-weight:400;letter-spacing:-0.01em;color:#1a1a1c;">I study how regulation reshapes markets — building models of how firms and consumers respond to policy to understand what happens when governments change the rules.</p>
+      <p style="font-size:15.5px;line-height:1.7;color:#86837c;margin-top:22px;">I completed my PhD at Stanford and spent a year as a postdoctoral researcher at UC Berkeley. My work mostly focuses on education and labor markets.</p>
+    </section>
+
+    <sc-for list="{{ sections }}" as="s" hint-placeholder-count="3">
+      <section id="{{ s.id }}" style="margin-bottom:60px;scroll-margin-top:30px;">
+        <h2 style="font-size:12px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:#b0ada4;margin-bottom:8px;">{{ s.label }}</h2>
+
+        <sc-for list="{{ s.groups }}" as="g" hint-placeholder-count="1">
+          <sc-if value="{{ g.hasSub }}" hint-placeholder-val="{{ false }}">
+            <div style="font-size:12.5px;font-weight:500;color:#86837c;margin:30px 0 4px;">{{ g.sub }}</div>
+          </sc-if>
+          <sc-for list="{{ g.papers }}" as="p" hint-placeholder-count="3">
+            <article class="m-row" style="padding:24px 0;border-bottom:1px solid #ece6d9;">
+              <h3 style="font-size:19px;line-height:1.36;font-weight:500;letter-spacing:-0.008em;margin-bottom:7px;">
+                <sc-if value="{{ p.hasTitleLink }}" hint-placeholder-val="{{ false }}"><a href="{{ p.url }}" target="_blank" rel="noopener" style="border-bottom:1px solid #e2e0da;" style-hover="color:var(--accent,#2f5fb0);border-bottom-color:var(--accent,#2f5fb0);">{{ p.title }}</a></sc-if>
+                <sc-if value="{{ p.noTitleLink }}" hint-placeholder-val="{{ true }}">{{ p.title }}</sc-if>
+              </h3>
+              <sc-if value="{{ p.hasAuthors }}" hint-placeholder-val="{{ true }}">
+                <div style="font-size:14.5px;color:#6f6c65;margin-bottom:3px;">with <sc-for list="{{ p.authors }}" as="a"><sc-if value="{{ a.isLink }}" hint-placeholder-val="{{ true }}"><a href="{{ a.url }}" target="_blank" rel="noopener" style="color:#42403a;" style-hover="color:var(--accent,#2f5fb0);">{{ a.name }}</a></sc-if><sc-if value="{{ a.isText }}" hint-placeholder-val="{{ false }}"><span>{{ a.name }}</span></sc-if>{{ a.sep }}</sc-for></div>
+              </sc-if>
+              <sc-if value="{{ p.hasJournal }}" hint-placeholder-val="{{ false }}">
+                <div style="font-size:14.5px;color:#42403a;"><span style="font-style:italic;">{{ p.journal.name }}</span>{{ p.journal.rest }}</div>
+              </sc-if>
+              <sc-if value="{{ p.hasStatus }}" hint-placeholder-val="{{ false }}">
+                <div style="font-size:14px;color:#9a978f;">{{ p.statusDate }} {{ p.statusText }}<sc-if value="{{ p.hasStatusJournal }}" hint-placeholder-val="{{ false }}"><span style="font-style:italic;font-weight:700;color:#33312b;">{{ p.statusJournal }}</span></sc-if><sc-if value="{{ p.hasStatusAward }}" hint-placeholder-val="{{ false }}"><span style="font-style:italic;">{{ p.statusAward }}</span></sc-if></div>
+              </sc-if>
+              <sc-if value="{{ p.hasNote }}" hint-placeholder-val="{{ false }}">
+                <div style="font-size:14px;color:#9a978f;font-style:italic;">{{ p.note }}</div>
+              </sc-if>
+              <sc-if value="{{ p.hasLinks }}" hint-placeholder-val="{{ true }}">
+                <div class="m-links" style="display:flex;flex-wrap:wrap;gap:18px;margin-top:11px;font-size:13px;">
+                  <sc-if value="{{ p.hasAbstract }}" hint-placeholder-val="{{ true }}">
+                    <button class="m-link" onClick="{{ p.toggle }}" aria-expanded="{{ p.ariaOpen }}" style="cursor:pointer;background:none;border:none;padding:0;font:inherit;color:{{ p.toggleColor }};">{{ p.toggleLabel }}</button>
+                  </sc-if>
+                  <sc-for list="{{ p.links }}" as="l"><a href="{{ l.url }}" target="_blank" rel="noopener" class="m-link">{{ l.label }}</a></sc-for>
+                </div>
+              </sc-if>
+              <sc-if value="{{ p.hasAbstract }}" hint-placeholder-val="{{ false }}">
+                <div class="m-abs" style="display:grid;grid-template-rows:{{ p.rows }};transition:grid-template-rows .32s ease;">
+                  <div style="overflow:hidden;">
+                    <p class="m-abs-inner" style="margin-top:14px;padding-left:16px;border-left:2px solid #e2e0da;font-size:14.5px;line-height:1.65;color:#5a574f;max-width:62ch;opacity:{{ p.absOpacity }};">{{ p.abstract }}</p>
+                  </div>
+                </div>
+              </sc-if>
+            </article>
+          </sc-for>
+        </sc-for>
+      </section>
+    </sc-for>
+
+    <footer style="font-size:12.5px;color:#b0ada4;padding-top:18px;border-top:1px solid #ece6d9;">
+      © 2026 Sebastián Otero · New York, NY
+    </footer>
+  </main>
+</div>
+
+<template id="__bundler_thumbnail">
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <rect width="100" height="100" fill="#2f5fb0"/>
+  <text x="50" y="50" font-family="Georgia, serif" font-size="34" font-weight="700" fill="#ffffff" text-anchor="middle" dominant-baseline="central" letter-spacing="-1">SO</text>
+</svg>
+</template></x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1180,&quot;height&quot;:900},&quot;accent&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#2f5fb0&quot;,&quot;options&quot;:[&quot;#1f3a8a&quot;,&quot;#2b6b5b&quot;,&quot;#9a3b4f&quot;,&quot;#2f5fb0&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Theme&quot;},&quot;density&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;comfortable&quot;,&quot;options&quot;:[&quot;comfortable&quot;,&quot;compact&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Theme&quot;},&quot;updated&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;June 2026&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Content&quot;}}">
+class Component extends DCLogic {
+  state = { sections: [], openIds: {}, activeId: 'publications', copied: false, menuOpen: false };
+
+  componentDidMount() {
+    const load = () => {
+      const D = (typeof window !== 'undefined') && window.__OTERO_DATA;
+      if (D && D.buildSections) {
+        this.setState({ sections: D.buildSections() });
+      } else {
+        this._loadT = setTimeout(load, 30);
+      }
+    };
+    load();
+    this.applyTheme();
+  }
+
+  componentDidUpdate() {
+    this.applyTheme();
+    if (!this._scrollBound && this.state.sections.length) this.attachSpy();
+  }
+
+  componentWillUnmount() {
+    if (this._onScroll) window.removeEventListener('scroll', this._onScroll);
+    if (this._ct) clearTimeout(this._ct);
+    if (this._loadT) clearTimeout(this._loadT);
+  }
+
+  applyTheme() {
+    const root = document.getElementById('m-root');
+    if (!root) return;
+    root.style.setProperty('--accent', this.props.accent || '#2f5fb0');
+    root.setAttribute('data-density', this.props.density || 'comfortable');
+  }
+
+  attachSpy() {
+    if (this._onScroll) window.removeEventListener('scroll', this._onScroll);
+    const ids = ['publications', 'working-papers', 'in-progress', 'other-writing'];
+    const onScroll = () => {
+      const line = 140;
+      const vh = window.innerHeight;
+      let cur = ids[0];
+      for (const id of ids) {
+        const el = document.getElementById(id);
+        if (el && el.getBoundingClientRect().top <= line) cur = id;
+      }
+      const atBottom = window.scrollY + vh >= document.documentElement.scrollHeight - 6;
+      if (atBottom) {
+        for (const id of ids) {
+          const el = document.getElementById(id);
+          if (el && el.getBoundingClientRect().top < vh - 80) cur = id;
+        }
+      }
+      if (cur !== this.state.activeId) this.setState({ activeId: cur });
+    };
+    this._onScroll = onScroll;
+    this._scrollBound = true;
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  }
+
+  toggle(id) {
+    this.setState((s) => ({ openIds: { ...s.openIds, [id]: !s.openIds[id] } }));
+  }
+
+  toggleMenu() {
+    this.setState((s) => ({ menuOpen: !s.menuOpen }));
+  }
+
+  closeMenu() {
+    this.setState({ menuOpen: false });
+  }
+
+  copyEmail() {
+    const email = 'so2699@columbia.edu';
+    try { if (navigator.clipboard) navigator.clipboard.writeText(email); } catch (e) {}
+    this.setState({ copied: true });
+    clearTimeout(this._ct);
+    this._ct = setTimeout(() => this.setState({ copied: false }), 1700);
+  }
+
+  renderVals() {
+    const open = this.state.openIds;
+    const active = this.state.activeId;
+    const accentVar = 'var(--accent,#2f5fb0)';
+    const sections = (this.state.sections || []).map((s) => ({
+      ...s,
+      groups: s.groups.map((g) => ({
+        ...g,
+        hasSub: !!g.sub,
+        papers: g.papers.map((p) => {
+          const isOpen = !!open[p.id];
+          return {
+            ...p,
+            noTitleLink: !p.hasTitleLink,
+            open: isOpen,
+            rows: isOpen ? '1fr' : '0fr',
+            absOpacity: isOpen ? 1 : 0,
+            ariaOpen: isOpen ? 'true' : 'false',
+            toggleLabel: isOpen ? 'Hide abstract' : 'Abstract',
+            toggleColor: isOpen ? accentVar : '',
+            toggle: () => this.toggle(p.id),
+          };
+        }),
+      })),
+    }));
+    const navOrder = [
+      { id: 'publications', label: 'Publications' },
+      { id: 'working-papers', label: 'Working Papers' },
+      { id: 'in-progress', label: 'In Progress' },
+      { id: 'other-writing', label: 'Other Writing' },
+    ];
+    const navItems = navOrder.map((n) => {
+      const isActive = n.id === active;
+      return {
+        href: '#' + n.id,
+        label: n.label,
+        color: isActive ? accentVar : '#9a978f',
+        weight: isActive ? 600 : 400,
+        tick: isActive ? accentVar : 'transparent',
+        current: isActive ? 'true' : 'false',
+      };
+    });
+    return {
+      sections,
+      navItems,
+      updated: this.props.updated || 'June 2026',
+      menuAria: this.state.menuOpen ? 'true' : 'false',
+      menuOpacity: this.state.menuOpen ? 1 : 0,
+      menuTransform: this.state.menuOpen ? 'translateY(0) scale(1)' : 'translateY(-8px) scale(0.96)',
+      menuPointer: this.state.menuOpen ? 'auto' : 'none',
+      line1: this.state.menuOpen ? 'translateY(7px) rotate(45deg)' : 'none',
+      line2op: this.state.menuOpen ? 0 : 1,
+      line3: this.state.menuOpen ? 'translateY(-7px) rotate(-45deg)' : 'none',
+      toggleMenu: () => this.toggleMenu(),
+      closeMenu: () => this.closeMenu(),
+      emailLabel: this.state.copied ? 'Copied ✓' : 'so2699@columbia.edu',
+      emailColor: this.state.copied ? accentVar : '',
+      copyEmail: () => this.copyEmail(),
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{background:#131418;}
+  ::selection{background:#33508a;color:#fff;}
+  a{color:inherit;text-decoration:none;}
+  @media(max-width:760px){.noc-hero{grid-template-columns:1fr!important;gap:34px!important;}.noc-photo{max-width:240px;}.noc-sec{grid-template-columns:1fr!important;gap:10px!important;}.noc-seclabel{position:static!important;}}
+</style>
+</helmet>
+<div style="font-family:'Newsreader',Georgia,serif;background:#131418;color:#e8e6e0;min-height:100vh;-webkit-font-smoothing:antialiased;">
+
+  <header style="position:sticky;top:0;z-index:50;background:rgba(19,20,24,0.82);backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,0.07);">
+    <div style="max-width:900px;margin:0 auto;padding:0 30px;height:64px;display:flex;align-items:center;justify-content:space-between;gap:20px;">
+      <a href="#top" style="font-family:'Archivo',sans-serif;font-weight:700;font-size:13.5px;letter-spacing:0.16em;text-transform:uppercase;color:#e8e6e0;">S. Otero</a>
+      <nav style="display:flex;align-items:center;gap:24px;font-family:'Archivo',sans-serif;font-size:12px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;">
+        <a href="#publications" style="color:#9b988d;" style-hover="color:#82a9ea;">Publications</a>
+        <a href="#working-papers" style="color:#9b988d;" style-hover="color:#82a9ea;">Working Papers</a>
+        <a href="#in-progress" style="color:#9b988d;" style-hover="color:#82a9ea;">In Progress</a>
+        <a href="https://sebotero.github.io/cv/cv_sebastian_otero.pdf" style="color:#82a9ea;border:1px solid rgba(130,169,234,0.4);padding:6px 14px;border-radius:999px;" style-hover="background:#82a9ea;color:#131418;border-color:#82a9ea;">CV</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top" style="max-width:900px;margin:0 auto;padding:0 30px;">
+
+    <section class="noc-hero" style="display:grid;grid-template-columns:1.5fr 1fr;gap:52px;align-items:center;padding:84px 0 70px;">
+      <div>
+        <div style="font-family:'Archivo',sans-serif;font-size:11.5px;font-weight:600;letter-spacing:0.24em;text-transform:uppercase;color:#82a9ea;margin-bottom:24px;">Columbia University · Economics</div>
+        <h1 style="font-size:clamp(40px,5.5vw,66px);line-height:1.02;font-weight:500;letter-spacing:-0.018em;margin-bottom:26px;color:#f4f2ec;">Sebastián Otero</h1>
+        <p style="font-size:21px;line-height:1.5;color:#c3c0b7;max-width:30ch;margin-bottom:30px;">I study how regulation reshapes markets — <span style="font-style:italic;color:#9cb8ee;">combining causal inference and structural modeling.</span></p>
+        <div style="display:flex;flex-wrap:wrap;gap:9px;font-family:'Archivo',sans-serif;font-size:12.5px;font-weight:500;letter-spacing:0.03em;">
+          <a href="mailto:so2699@columbia.edu" style="color:#e8e6e0;border:1px solid rgba(255,255,255,0.18);padding:9px 15px;border-radius:999px;" style-hover="border-color:#82a9ea;color:#82a9ea;">✉ so2699@columbia.edu</a>
+          <a href="https://scholar.google.com/citations?user=qGak9VMAAAAJ&hl=en" target="_blank" rel="noopener" style="color:#9b988d;border:1px solid rgba(255,255,255,0.18);padding:9px 15px;border-radius:999px;" style-hover="border-color:#82a9ea;color:#82a9ea;">Scholar</a>
+          <a href="https://www.linkedin.com/in/sebotero/" target="_blank" rel="noopener" style="color:#9b988d;border:1px solid rgba(255,255,255,0.18);padding:9px 15px;border-radius:999px;" style-hover="border-color:#82a9ea;color:#82a9ea;">LinkedIn</a>
+          <a href="https://github.com/sebotero" target="_blank" rel="noopener" style="color:#9b988d;border:1px solid rgba(255,255,255,0.18);padding:9px 15px;border-radius:999px;" style-hover="border-color:#82a9ea;color:#82a9ea;">GitHub</a>
+        </div>
+      </div>
+      <div>
+        <img class="noc-photo" src="images/sebastian-otero-800.jpeg" alt="Sebastián Otero" style="width:100%;border-radius:6px;display:block;box-shadow:0 30px 60px -28px rgba(0,0,0,0.85);border:1px solid rgba(255,255,255,0.08);">
+      </div>
+    </section>
+
+    <section style="border-top:1px solid rgba(255,255,255,0.08);padding:40px 0 4px;">
+      <p style="font-size:18.5px;line-height:1.65;color:#cbc8bf;max-width:64ch;">I'm an Assistant Professor of Economics at Columbia University, a Faculty Research Fellow at <a href="https://www.nber.org/" target="_blank" rel="noopener" style="color:#82a9ea;border-bottom:1px solid rgba(130,169,234,0.4);">NBER</a>, and a Research Affiliate at IZA. I completed my PhD at Stanford and spent a year as a postdoctoral researcher at UC Berkeley. My work mostly focuses on <span style="font-style:italic;color:#e8e6e0;">education and labor markets.</span></p>
+    </section>
+
+    <sc-for list="{{ sections }}" as="s" hint-placeholder-count="3">
+      <section id="{{ s.id }}" class="noc-sec" style="border-top:1px solid rgba(255,255,255,0.08);margin-top:50px;padding-top:42px;display:grid;grid-template-columns:180px 1fr;gap:36px;">
+        <div class="noc-seclabel" style="position:sticky;top:92px;align-self:start;">
+          <div style="font-family:'Archivo',sans-serif;font-size:11px;font-weight:600;letter-spacing:0.18em;color:#82a9ea;margin-bottom:8px;">{{ s.idxnum }}</div>
+          <h2 style="font-size:24px;font-weight:500;letter-spacing:-0.01em;color:#f4f2ec;">{{ s.label }}</h2>
+        </div>
+        <div>
+          <sc-for list="{{ s.groups }}" as="g" hint-placeholder-count="1">
+            <sc-if value="{{ g.hasSub }}" hint-placeholder-val="{{ false }}">
+              <div style="font-family:'Archivo',sans-serif;font-size:11px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:#7b786f;margin:20px 0 16px;">{{ g.sub }}</div>
+            </sc-if>
+            <sc-for list="{{ g.papers }}" as="p" hint-placeholder-count="3">
+              <article style="padding:20px 0;border-bottom:1px solid rgba(255,255,255,0.07);display:flex;gap:16px;">
+                <sc-if value="{{ p.showNum }}" hint-placeholder-val="{{ true }}">
+                  <div style="font-family:'Archivo',sans-serif;font-size:13px;font-weight:600;color:#6a7fb0;line-height:1.6;min-width:20px;font-variant-numeric:tabular-nums;">{{ p.num }}</div>
+                </sc-if>
+                <div style="flex:1;min-width:0;">
+                  <h3 style="font-size:20px;line-height:1.32;font-weight:500;letter-spacing:-0.005em;margin-bottom:6px;color:#f1efe9;">
+                    <sc-if value="{{ p.hasTitleLink }}" hint-placeholder-val="{{ false }}"><a href="{{ p.url }}" target="_blank" rel="noopener" style="border-bottom:1px solid transparent;" style-hover="color:#9cb8ee;border-bottom-color:rgba(130,169,234,0.5);">{{ p.title }}</a></sc-if>
+                    <sc-if value="{{ p.noTitleLink }}" hint-placeholder-val="{{ true }}">{{ p.title }}</sc-if>
+                  </h3>
+                  <sc-if value="{{ p.hasAuthors }}" hint-placeholder-val="{{ true }}">
+                    <div style="font-family:'Archivo',sans-serif;font-size:13.5px;color:#9b988d;margin-bottom:3px;">with <sc-for list="{{ p.authors }}" as="a"><sc-if value="{{ a.isLink }}" hint-placeholder-val="{{ true }}"><a href="{{ a.url }}" target="_blank" rel="noopener" style="color:#c3c0b7;border-bottom:1px solid rgba(255,255,255,0.18);" style-hover="color:#82a9ea;border-bottom-color:#82a9ea;">{{ a.name }}</a></sc-if><sc-if value="{{ a.isText }}" hint-placeholder-val="{{ false }}"><span>{{ a.name }}</span></sc-if>{{ a.sep }}</sc-for></div>
+                  </sc-if>
+                  <sc-if value="{{ p.hasJournal }}" hint-placeholder-val="{{ false }}">
+                    <div style="font-size:16px;color:#cbc8bf;"><span style="font-style:italic;font-weight:600;color:#9cb8ee;">{{ p.journal.name }}</span>{{ p.journal.rest }}</div>
+                  </sc-if>
+                  <sc-if value="{{ p.hasStatus }}" hint-placeholder-val="{{ false }}">
+                    <div style="font-size:15px;color:#9b988d;font-style:italic;">{{ p.statusDate }} {{ p.statusText }}<sc-if value="{{ p.hasStatusJournal }}" hint-placeholder-val="{{ false }}"><span style="font-weight:600;color:#cbc8bf;">{{ p.statusJournal }}</span></sc-if><sc-if value="{{ p.hasStatusAward }}" hint-placeholder-val="{{ false }}"><span>{{ p.statusAward }}</span></sc-if></div>
+                  </sc-if>
+                  <sc-if value="{{ p.hasNote }}" hint-placeholder-val="{{ false }}">
+                    <div style="font-size:15px;color:#9b988d;font-style:italic;">{{ p.note }}</div>
+                  </sc-if>
+                  <sc-if value="{{ p.hasLinks }}" hint-placeholder-val="{{ true }}">
+                    <div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:11px;font-family:'Archivo',sans-serif;font-size:12px;font-weight:500;">
+                      <sc-if value="{{ p.hasAbstract }}" hint-placeholder-val="{{ true }}">
+                        <button onClick="{{ p.toggle }}" style="cursor:pointer;background:#82a9ea;border:1px solid #82a9ea;color:#131418;padding:5px 12px;border-radius:5px;font:inherit;font-weight:600;" style-hover="background:#9cb8ee;border-color:#9cb8ee;">{{ p.toggleLabel }}</button>
+                      </sc-if>
+                      <sc-for list="{{ p.links }}" as="l"><a href="{{ l.url }}" target="_blank" rel="noopener" style="padding:5px 12px;border-radius:5px;border:1px solid rgba(255,255,255,0.16);color:#9b988d;" style-hover="border-color:#82a9ea;color:#82a9ea;">{{ l.label }}</a></sc-for>
+                    </div>
+                  </sc-if>
+                  <sc-if value="{{ p.open }}" hint-placeholder-val="{{ false }}">
+                    <p style="margin-top:13px;padding:16px 19px;background:#1c1e24;border-left:3px solid #82a9ea;border-radius:0 7px 7px 0;font-size:16px;line-height:1.62;color:#c3c0b7;">{{ p.abstract }}</p>
+                  </sc-if>
+                </div>
+              </article>
+            </sc-for>
+          </sc-for>
+        </div>
+      </section>
+    </sc-for>
+
+    <footer style="border-top:1px solid rgba(255,255,255,0.08);margin-top:56px;padding:38px 0 64px;display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;font-family:'Archivo',sans-serif;font-size:12px;letter-spacing:0.05em;color:#7b786f;">
+      <span>© 2026 Sebastián Otero</span>
+      <span>Columbia University · Department of Economics</span>
+    </footer>
+  </main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:900,&quot;height&quot;:900}}">
+class Component extends DCLogic {
+  state = { sections: [], openIds: {} };
+
+  componentDidMount() {
+    import('./papers.js').then((m) => {
+      this.setState({ sections: m.buildSections() });
+    });
+  }
+
+  toggle(id) {
+    this.setState((s) => ({ openIds: { ...s.openIds, [id]: !s.openIds[id] } }));
+  }
+
+  renderVals() {
+    const open = this.state.openIds;
+    const sections = (this.state.sections || []).map((s, si) => ({
+      ...s,
+      idxnum: String(si + 1).padStart(2, '0'),
+      groups: s.groups.map((g) => ({
+        ...g,
+        hasSub: !!g.sub,
+        papers: g.papers.map((p) => ({
+          ...p,
+          noTitleLink: !p.hasTitleLink,
+          open: !!open[p.id],
+          toggleLabel: open[p.id] ? 'Hide abstract' : 'Abstract',
+          toggle: () => this.toggle(p.id),
+        })),
+      })),
+    }));
+    return { sections };
+  }
+}
+</script>
+</body>
+</html>
