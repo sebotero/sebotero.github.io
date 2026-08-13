@@ -1,0 +1,63 @@
+::selection {
+  background-color:#7E57C2;
+  color: #fff;
+}
+::-moz-selection {
+  background-color:#7E57C2;
+  color: #fff;
+}
+
+
+
+.theme-color {
+  color:#7E57C2;
+}
+
+
+.theme-after-bg:after,
+.btn-theme,
+.theme-bg {
+  background:#7E57C2;
+}
+
+
+.btn-theme {
+  border-color:#7E57C2;
+}
+
+.portfolio-hover-01 .action-btn a:hover,
+.portfolio-filter li:hover, 
+.portfolio-filter li.active,
+.owl-dots .owl-dot.active,
+.m-btn-theme, 
+.title-section h2:after,
+.m-btn-white:hover,
+.theme-after:after,
+.theme-g-bg{
+	background: #7E57C2;
+	background: -webkit-linear-gradient(to right, #7E57C2, #7E57C2);
+	background: linear-gradient(to right, #7E57C2, #7E57C2);
+}
+
+
+/*Reverce*/
+.m-btn-theme:hover{
+	background: #0072ff;
+	background: -webkit-linear-gradient(to right, #7E57C2, #7E57C2);
+	background: linear-gradient(to right, #7E57C2, #7E57C2);
+}
+
+.home-banner .avtar-img,
+.m-btn-theme:hover,
+.m-btn-white:hover {
+  box-shadow: 0px 15px 20px rgba(5, 117, 230, 0.4);
+}
+
+@media (max-width: 991px){
+  .header {
+    background:#7E57C2;
+  }
+}
+
+	
+

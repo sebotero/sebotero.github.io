@@ -1,0 +1,63 @@
+::selection {
+  background-color:#b490ca;
+  color: #fff;
+}
+::-moz-selection {
+  background-color:#b490ca;
+  color: #fff;
+}
+
+
+
+.theme-color {
+  color:#b490ca;
+}
+
+
+.theme-after-bg:after,
+.btn-theme,
+.theme-bg {
+  background:#b490ca;
+}
+
+
+.btn-theme {
+  border-color:#b490ca;
+}
+
+.portfolio-hover-01 .action-btn a:hover,
+.portfolio-filter li:hover, 
+.portfolio-filter li.active,
+.owl-dots .owl-dot.active,
+.m-btn-theme, 
+.title-section h2:after,
+.m-btn-white:hover,
+.theme-after:after,
+.theme-g-bg{
+	background: #b490ca;
+	background: -webkit-linear-gradient(to right, #5ee7df, #b490ca);
+	background: linear-gradient(to right, #5ee7df, #b490ca);
+}
+
+
+/*Reverce*/
+.m-btn-theme:hover{
+	background: #0072ff;
+	background: -webkit-linear-gradient(to right, #b490ca, #5ee7df);
+	background: linear-gradient(to right, #b490ca, #5ee7df);
+}
+
+.home-banner .avtar-img,
+.m-btn-theme:hover,
+.m-btn-white:hover {
+  box-shadow: 0px 15px 20px rgba(5, 117, 230, 0.4);
+}
+
+@media (max-width: 991px){
+  .header {
+    background:#b490ca;
+  }
+}
+
+	
+
